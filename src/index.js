@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import ReactGA from 'react-ga';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+      <div id="root_router">
+
+      <Route path="/"/>
+      <Switch style={{transform:"3s", opacity:1}}>
+
+      </Switch>
+
+
+  </BrowserRouter>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
