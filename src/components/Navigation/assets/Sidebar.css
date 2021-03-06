@@ -1,14 +1,43 @@
 #sub-nav{
-  border:1px solid black;
-  display:grid;
-  grid-template-rows:auto;
-  width:20vw;
+  /* border:1px solid black; */
+  width:25vw;
+  grid-column:1;
+
+  display: grid;
+  grid-template-columns: 80% 20%;
 
 }
 
 
+#sub-nav-grid{
+  display:grid;
+  grid-template-rows:auto;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
 .sub-nav-button{
   text-align: center;
   white-space: pre-wrap;
 
+}
+
+.fa-arrow-left{
+  /* font-size: xx-large;
+  width: 100%;
+  display: grid;
+  text-align: right; */
+
+  text-align: center;
+  grid-column: 2;
+  margin:auto;
+
+}
+.fa-arrow-right{
+  text-align: center;
+  grid-column: 2;
+  display: grid;
+  width: 8vw;
+  text-align: right;
+  margin: auto;
 }

@@ -1,4 +1,11 @@
-#navigation{
-  /* height:10vh; */
-  /* grid-row:1; */
+#business-logic{
+    display:grid;
+    grid-template-columns: auto;
+
+    height:88vh;
+}
+
+
+body{
+  font-family:Futura, sans-serif;
 }

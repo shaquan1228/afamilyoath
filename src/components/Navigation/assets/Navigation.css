@@ -1,17 +1,17 @@
 #main-nav{
   display:grid;
   grid-template-columns:20% 10% 20% 20% 20% 10%;
-  border:1px solid black;
+  /* border:1px solid black; */
 
   height:10vh;
 }
 
 .main-nav-big{
-border:1px solid black;
+/* border:1px solid black; */
 }
 
 .main-nav-small{
-border:1px solid black;
+/* border:1px solid black; */
 }
 
 #main-nav-name{
@@ -40,4 +40,13 @@ border:1px solid black;
 
 #main-nav-policies{
 
+}
+
+.fa-shopping-cart{
+  font-size: xx-large;
+width: 100%;
+display: grid;
+height: 100%;
+align-items: center;
+justify-content: center;
 }

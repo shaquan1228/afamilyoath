@@ -10,18 +10,26 @@ class Navigation extends React.Component{
   }
 
 
-
   render(){
     return (
       <div id="main-nav">
 
-      <div className="main-nav-big" id="main-nav-name">
-      </div>
-      <div className="main-nav-small" id="main-nav-logo"></div>
-      <div className="main-nav-big" id="main-nav-about"></div>
-      <div className="main-nav-big" id="main-nav-shop"></div>
-      <div className="main-nav-big" id="main-nav-policies"></div>
-      <div className="main-nav-small" id="main-nav-bag"></div>
+          <div className="main-nav-big" id="main-nav-name">
+              <Button innerHTML="A Family Oath" url="/" type="main" styleType="light"/>
+          </div>
+          <div className="main-nav-small" id="main-nav-logo"></div>
+          <div className="main-nav-big" id="main-nav-about">
+              <Button innerHTML="Oath" url="oath" type="main" styleType="light"/>
+          </div>
+          <div className="main-nav-big" id="main-nav-shop">
+                <Button innerHTML="Catalog" url="shop" type="main" styleType="light"/>
+          </div>
+          <div className="main-nav-big" id="main-nav-policies">
+                <Button innerHTML="Policies" url="policies" type="main" styleType="light"/>
+          </div>
+          <div className="main-nav-small" id="main-nav-bag">
+              <i className="fa fa-shopping-cart"/>
+          </div>
       </div>
     )
   }
