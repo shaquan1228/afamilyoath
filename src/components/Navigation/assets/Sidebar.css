@@ -1,0 +1,14 @@
+#sub-nav{
+  border:1px solid black;
+  display:grid;
+  grid-template-rows:auto;
+  width:20vw;
+
+}
+
+
+.sub-nav-button{
+  text-align: center;
+  white-space: pre-wrap;
+
+}
