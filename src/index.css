@@ -1,6 +1,6 @@
 #business-logic{
     display:grid;
-    grid-template-columns: auto;
+    grid-template-columns: 25% 75%;
 
     height:88vh;
 }
