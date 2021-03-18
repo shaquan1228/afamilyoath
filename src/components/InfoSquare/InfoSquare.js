@@ -1,7 +1,5 @@
 import React from 'react';
 
-import image from './assets/image.png';
-
 import './assets/InfoSquare.css';
 
 
