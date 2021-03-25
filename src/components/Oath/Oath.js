@@ -12,8 +12,8 @@ class Oath extends React.Component{
   render(){
     return(
       <div>
-        <InfoSquare title="Philosophy" img="https://dominionmartialarts.com/wp-content/uploads/2017/04/default-image-620x600.jpg" innerHTML={dummyText} style="img_left" />
-        <InfoSquare title="Beginnings" img="https://dominionmartialarts.com/wp-content/uploads/2017/04/default-image-620x600.jpg" innerHTML={dummyText} style="img_right" />
+        <InfoSquare title="Philosophy" img="https://dominionmartialarts.com/wp-content/uploads/2017/04/default-image-620x600.jpg" innerHTML={dummyText} styleType="img_left" />
+        <InfoSquare title="Beginnings" img="https://dominionmartialarts.com/wp-content/uploads/2017/04/default-image-620x600.jpg" innerHTML={dummyText} styleType="img_right" />
 
       </div>
     )
