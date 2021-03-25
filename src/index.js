@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect, withRouter} from 'react-router-dom';
 
 import Navigation from './components/Navigation/Navigation.js';
 import Sidebar from './components/Navigation/Sidebar.js';
 import Test from './pages/Test.js';
 import './index.css';
-import Oath from './components/Oath/Oath.js';
+import Oath from './pages/Oath.js';
+import Policies from './pages/Policies.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -17,6 +18,7 @@ ReactDOM.render(
           <Route path="/:a([A-Za-z]+)/" component={Sidebar}/>
           <Switch>
             <Route path="/oath" component={Oath}/>
+            <Route path="/policies" component={Policies}/>
           </Switch>
       </div>
       </div>

@@ -1,6 +1,6 @@
 #sub-nav{
   /* border:1px solid black; */
-  width:25vw;
+  width:23vw;
   grid-column:1;
 
   display: grid;
@@ -15,6 +15,7 @@
   margin: auto;
   justify-content: center;
   align-items: center;
+  /* width:23vw; */
 }
 .sub-nav-button{
   text-align: center;
@@ -35,9 +36,9 @@
 }
 .fa-arrow-right{
   text-align: center;
-  grid-column: 2;
+  grid-column: auto / 2;
   display: grid;
-  width: 8vw;
-  text-align: right;
+  /* width: 8vw; */
+  /* text-align: right; */
   margin: auto;
 }

@@ -1,11 +1,39 @@
 #business-logic{
     display:grid;
-    grid-template-columns: 25% 75%;
-
+    /* grid-template-columns: 25% 75%; */
+    grid-template-columns: fit-content(100%) auto;
     height:88vh;
 }
 
 
 body{
   font-family:Futura, sans-serif;
+}
+
+
+.business-logic-right{
+  overflow-y:scroll;
+  animation: openPage 1s ease;
+}
+
+
+.business-logic-right::webkit-scrollbar{
+  width:10px;
+  background:black;
+}
+
+
+
+
+
+@keyframes openPage {
+  0% {
+      opacity: 0;
+      /* transform: scale(.8); */
+
+  }
+  100% {
+      opacity: 1;
+      /* transform:scale(1.3); */
+  }
 }

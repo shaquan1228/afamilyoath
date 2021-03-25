@@ -2,11 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './assets/Button.css';
 
-//TODO: @Carlos complete this
+
 class Button extends React.Component{
   constructor(props){
     super(props);
-    console.log(props);
     this.state = {
       innerHTML: props.innerHTML,
       url: props.url,
@@ -19,17 +18,20 @@ class Button extends React.Component{
     this.handleHoverExit = this.handleHoverExit.bind(this);
   }
 
-  componentDidMount() {
-    console.log();
+  componentDidUpdate(previousProps) {
+    if(this.props.innerHTML != previousProps.innerHTML){
+      this.setState({innerHTML: this.props.innerHTML})
+    }
   }
 
   handleClick() {
-    //TODO: takes you to the URL generated
-    console.log('CLICK');
+    let div = document.getElementsByClassName("sub-nav-finder")[this.state.url];
+    if(div){
+        div.scrollIntoView({behavior: "smooth", inline:"end"});
+    }
   }
 
   handleHover(e) {
-    //TODO: tranistion to being underlined
     e.target.style.transition = "text-decoration .05s ease-in";
     e.target.style.textDecoration = "underline solid";
   }
@@ -54,13 +56,18 @@ class Button extends React.Component{
     } else {
       console.log("Invalid style");
     }
-
+//Trying to make an underline on active page
+//     if(window.location.pathname === '/'+ this.state.url){
+//       console.log(window.location.pathname + "==" + this.state.innerHTML)
+//       let additionalStyle = {textDecoration: 'underline solid !important', transition: 'none'};
+// console.log(additionalStyle)
+//       myStyle = {...myStyle, ...additionalStyle}
+    console.log(myStyle)
     return (
        this.state.type==="main"
         ?       <div
                   className='button'
-                  onClick={this.handleClick}
-                  onMouseOver={this.handleHover}
+                  onMouseEnter={this.handleHover}
                   onMouseLeave={this.handleHoverExit}
                   style={myStyle}>
                     <Link to={this.state.url}>{this.state.innerHTML}</Link>
@@ -69,7 +76,7 @@ class Button extends React.Component{
         :       <div
                   className='button'
                   onClick={this.handleClick}
-                  onMouseOver={this.handleHover}
+                  onMouseEnter={this.handleHover}
                   onMouseLeave={this.handleHoverExit}
                   style={myStyle}>
                     {this.state.innerHTML}

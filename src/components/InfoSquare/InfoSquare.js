@@ -9,14 +9,14 @@ class InfoSquare extends React.Component{
     super(props);
     this.state = {
       title: props.title,
-      img: props.img, 
+      img: props.img,
       innerHTML: props.innerHTML,
       style: props.style // img_left, img_right
     }
   }
   render(){
     return(
-      <div>
+      <div id={this.state.title} className="sub-nav-finder">
         {
           this.state.img &&
           this.state.style === 'img_right' &&
