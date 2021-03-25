@@ -7,6 +7,7 @@ import Sidebar from './components/Navigation/Sidebar.js';
 import Test from './pages/Test.js';
 import './index.css';
 import Oath from './components/Oath/Oath.js';
+import ProductSquare from './components/ProductSquare/ProductSquare.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -17,6 +18,7 @@ ReactDOM.render(
           <Route path="/:a([A-Za-z]+)/" component={Sidebar}/>
           <Switch>
             <Route path="/oath" component={Oath}/>
+            <Route path="/shop" component={ProductSquare}/>
           </Switch>
       </div>
       </div>
