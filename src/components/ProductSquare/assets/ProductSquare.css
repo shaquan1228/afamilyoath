@@ -1,0 +1,19 @@
+.image {
+  background-color: aqua;
+  width: fit-content;
+}
+
+.description {
+  margin: auto;
+  text-align: center;
+}
+
+.product_container {
+  width: fit-content;
+  height: fit-content;
+  justify-content: center;
+}
+
+img {
+  box-sizing: border-box;
+}

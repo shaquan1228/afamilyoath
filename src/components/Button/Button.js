@@ -13,33 +13,21 @@ class Button extends React.Component{
       styleType: props.styleType
     };
 
-    this.handleClick = this.handleClick.bind(this);
-    this.handleHover = this.handleHover.bind(this);
-    this.handleHoverExit = this.handleHoverExit.bind(this);
-  }
+  this.handleClick = this.handleClick.bind(this);
+}
 
-  componentDidUpdate(previousProps) {
-    if(this.props.innerHTML != previousProps.innerHTML){
-      this.setState({innerHTML: this.props.innerHTML})
-    }
+componentDidUpdate(previousProps) {
+  if(this.props.innerHTML != previousProps.innerHTML){
+    this.setState({innerHTML: this.props.innerHTML})
   }
+}
 
-  handleClick() {
-    let div = document.getElementsByClassName("sub-nav-finder")[this.state.url];
-    if(div){
-        div.scrollIntoView({behavior: "smooth", inline:"end"});
-    }
+handleClick() {
+  let div = document.getElementsByClassName("sub-nav-finder")[this.state.url];
+  if(div){
+      div.scrollIntoView({behavior: "smooth", inline:"end"});
   }
-
-  handleHover(e) {
-    e.target.style.transition = "text-decoration .05s ease-in";
-    e.target.style.textDecoration = "underline solid";
-  }
-
-  handleHoverExit(e) {
-    e.target.style.transition = "text-decoration .05s ease-out";
-    e.target.style.textDecoration = "underline transparent";
-  }
+}
 
   render(){
     let myStyle = {};
@@ -67,8 +55,7 @@ class Button extends React.Component{
        this.state.type==="main"
         ?       <div
                   className='button'
-                  onMouseEnter={this.handleHover}
-                  onMouseLeave={this.handleHoverExit}
+                  onClick={this.handleClick}
                   style={myStyle}>
                     <Link to={this.state.url}>{this.state.innerHTML}</Link>
 
@@ -76,8 +63,6 @@ class Button extends React.Component{
         :       <div
                   className='button'
                   onClick={this.handleClick}
-                  onMouseEnter={this.handleHover}
-                  onMouseLeave={this.handleHoverExit}
                   style={myStyle}>
                     {this.state.innerHTML}
 

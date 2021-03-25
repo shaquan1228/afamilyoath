@@ -5,8 +5,12 @@
   min-height: 35px; */
   width:100%;
   height:100%;
-  align-items: center;
+  align-items: center; 
+}
 
+.button:hover {
+  transition: text-decoration .05s ease-in;
+  text-decoration: underline solid;
 }
 
 a{

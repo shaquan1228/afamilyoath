@@ -8,6 +8,7 @@ import Test from './pages/Test.js';
 import './index.css';
 import Oath from './pages/Oath.js';
 import Policies from './pages/Policies.js';
+import ProductSquare from './components/ProductSquare/ProductSquare.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -19,6 +20,7 @@ ReactDOM.render(
           <Switch>
             <Route path="/oath" component={Oath}/>
             <Route path="/policies" component={Policies}/>
+            <Route path="/shop" component={ProductSquare}/>
           </Switch>
       </div>
       </div>

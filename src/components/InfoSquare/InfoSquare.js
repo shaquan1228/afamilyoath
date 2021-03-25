@@ -26,7 +26,7 @@ class InfoSquare extends React.Component{
               <p>{this.state.innerHTML}</p>
             </div>
             <div className='image_right'>
-              <img className="infosquare-image" src={this.state.img} alt="This is my image"/>
+              <img className="infosquare-image" src={this.state.img} alt="This is my infoImg"/>
             </div>
           </div>
         }
@@ -35,7 +35,7 @@ class InfoSquare extends React.Component{
           this.state.style === 'img_left' &&
           <div className='wrapper_img_left'>
             <div className='image_left'>
-              <img className="infosquare-image" src={this.state.img} alt="This is my image"/>
+              <img className="infosquare-image" src={this.state.img} alt="This is my infoImg"/>
             </div>
             <div className='text_right'>
               <h1>{this.state.title}</h1>
