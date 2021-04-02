@@ -1,0 +1,20 @@
+#bag-sub-nav{
+  height:90%;
+  display: grid;
+  grid-template-rows:auto auto 70% auto;
+}
+
+.bag-stock-text{
+  text-align: left;
+}
+
+
+#bag-shipping{
+  text-align: center;
+}
+
+
+#bag-cart-list{
+  justify-self:center;
+  overflow-y:scroll;
+}

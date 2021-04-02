@@ -23,21 +23,21 @@ class Sidebar extends React.Component{
       this.setState({ subNavDivs: [...document.getElementsByClassName("sub-nav-finder")]})
     }
   }
-  
+
   handleOpen(e){
     this.setState({open:true});
-    document.getElementById("sub-nav").style.transition = "width .3s ease-in"
-    document.getElementById("sub-nav").style.width = "23vw"
-    document.getElementById("sub-nav-grid").style.transition = "display .3s ease-in"
-    document.getElementById("sub-nav-grid").style.display = "grid"
+    document.getElementById("sub-nav").style.transition = "width .3s ease-in";
+    document.getElementById("sub-nav").style.width = "23vw";
+    document.getElementById("sub-nav-grid").style.transition = "display .3s ease-in";
+    document.getElementById("sub-nav-grid").style.display = "grid";
   }
 
   handleClose(e){
     this.setState({open:false});
-    document.getElementById("sub-nav").style.transition = "width .3s ease-out"
-    document.getElementById("sub-nav").style.width = "3vw"
-    document.getElementById("sub-nav-grid").style.transition = "display .3s ease-out"
-    document.getElementById("sub-nav-grid").style.display = "none"
+    document.getElementById("sub-nav").style.transition = "width .3s ease-out";
+    document.getElementById("sub-nav").style.width = "3vw";
+    document.getElementById("sub-nav-grid").style.transition = "display .3s ease-out";
+    document.getElementById("sub-nav-grid").style.display = "none";
   }
 
   render(){
@@ -55,12 +55,8 @@ class Sidebar extends React.Component{
           </div>
 
           {this.state.open
-              ?  <i className="fa fa-arrow-left"
-                        onClick={this.handleClose}>
-                      </i>
-              : <i className="fa fa-arrow-right"
-                        onClick={this.handleOpen}>
-                      </i>
+              ?  <i className="fa fa-arrow-left left" onClick={this.handleClose}/>
+              : <i className="fa fa-arrow-right right" onClick={this.handleOpen}/ >
           }
       </div>
     )

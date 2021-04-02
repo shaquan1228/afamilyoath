@@ -1,0 +1,27 @@
+.cart-item{
+  display:grid;
+  grid-template-columns: 29% 69%;
+  grid-column-gap:2%;
+}
+
+
+.cart-stock-img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+}
+.cart-text{
+  grid-column: 2;
+  display:grid;
+  grid-template-rows:auto;
+}
+
+.removeButton{
+  justify-self:right;
+}
+
+
+.cart-quantity-row{
+  display:grid;
+  grid-template-columns: .2fr .6fr .2fr;
+}

@@ -14,6 +14,7 @@ class Button extends React.Component{
     };
 
   this.handleClick = this.handleClick.bind(this);
+  this.setStyle = this.setStyle.bind(this);
 }
 
 componentDidUpdate(previousProps) {
@@ -23,53 +24,69 @@ componentDidUpdate(previousProps) {
 }
 
 handleClick() {
+console.log("Erer")
   let div = document.getElementsByClassName("sub-nav-finder")[this.state.url];
   if(div){
       div.scrollIntoView({behavior: "smooth", inline:"end"});
   }
 }
 
-  render(){
-    let myStyle = {};
-    if (this.state.styleType === "light") {
-      myStyle = {
-        color: "black",
-        background: "white"
-      }
-    } else if (this.state.styleType === "dark") {
-      myStyle = {
-        color: "white",
-        background: "black"
-      }
-    } else {
-      console.log("Invalid style");
+
+setStyle(){
+  let myStyle = {};
+  if (this.state.styleType === "light") {
+    myStyle = {
+      color: "black",
+      background: "white"
     }
+  } else if (this.state.styleType === "dark") {
+    myStyle = {
+      color: "white",
+      background: "black"
+    }
+  } else {
+    console.log("Invalid style");
+  }
+  return myStyle;
+}
+  render(){
+      let myStyle = this.setStyle();
 //Trying to make an underline on active page
 //     if(window.location.pathname === '/'+ this.state.url){
 //       console.log(window.location.pathname + "==" + this.state.innerHTML)
 //       let additionalStyle = {textDecoration: 'underline solid !important', transition: 'none'};
 // console.log(additionalStyle)
 //       myStyle = {...myStyle, ...additionalStyle}
-    console.log(myStyle)
-    return (
-       this.state.type==="main"
-        ?       <div
-                  className='button'
-                  onClick={this.handleClick}
-                  style={myStyle}>
-                    <Link to={this.state.url}>{this.state.innerHTML}</Link>
+      if(this.state.type==="main"){
+            return (
+                    <div
+                          className='button'
+                          style={myStyle}>
+                            <Link to={this.state.url}>{this.state.innerHTML}</Link>
+                    </div>
+          )
+      }else if(this.state.type==="sub"){
+            return(
+                <div
+                       className='button'
+                       onClick={this.handleClick}
+                       style={myStyle}>
+                         {this.state.innerHTML}
 
-              </div>
-        :       <div
-                  className='button'
-                  onClick={this.handleClick}
-                  style={myStyle}>
-                    {this.state.innerHTML}
+                   </div>
+            )
+      }else{
+        return(
+          <div
+                 className='button'
+                 style={myStyle}>
+                   {this.state.innerHTML}
 
-              </div>
+             </div>
+        )
+      }
 
 
-    )
   }
 }
 

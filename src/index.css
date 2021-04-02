@@ -1,8 +1,9 @@
 #business-logic{
     display:grid;
     /* grid-template-columns: 25% 75%; */
-    grid-template-columns: fit-content(100%) auto;
+    grid-template-columns: fit-content(100%) auto fit-content(30%);
     height:88vh;
+    grid-column-gap: 1%;
 }
 
 
@@ -14,6 +15,7 @@ body{
 .business-logic-right{
   overflow-y:scroll;
   animation: openPage 1s ease;
+  display: grid;
 }
 
 
@@ -24,8 +26,12 @@ body{
 
 
 
-
-
+.catalog{
+  display:flex;
+  flex-flow:row wrap;
+  align-items:flex-end;
+  gap: 1vh 1vw;
+}
 @keyframes openPage {
   0% {
       opacity: 0;

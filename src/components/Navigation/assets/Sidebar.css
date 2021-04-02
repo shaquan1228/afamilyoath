@@ -23,7 +23,7 @@
 
 }
 
-.fa-arrow-left{
+.left{
   /* font-size: xx-large;
   width: 100%;
   display: grid;
@@ -34,7 +34,7 @@
   margin:auto;
 
 }
-.fa-arrow-right{
+.right{
   text-align: center;
   grid-column: auto / 2;
   display: grid;
