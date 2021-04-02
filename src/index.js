@@ -9,6 +9,7 @@ import './index.css';
 import Oath from './pages/Oath.js';
 import Policies from './pages/Policies.js';
 import ProductSquare from './components/ProductSquare/ProductSquare.js';
+import DynamicProductPage from './components/DynamicProductPage/DynamicProductPage.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -21,6 +22,7 @@ ReactDOM.render(
             <Route path="/oath" component={Oath}/>
             <Route path="/policies" component={Policies}/>
             <Route path="/shop" component={ProductSquare}/>
+            <Route path="/00567" component={DynamicProductPage}/>
           </Switch>
       </div>
       </div>
