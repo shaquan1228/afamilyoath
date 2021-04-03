@@ -11,7 +11,7 @@ class InfoSquare extends React.Component{
       title: props.title,
       img: props.img,
       innerHTML: props.innerHTML,
-      style: props.style // img_left, img_right
+      style: props.style 
     }
   }
   render(){

@@ -12,13 +12,14 @@ class Sidebar extends React.Component{
 
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
-
   }
+
   componentDidMount(){
     this.setState({  subNavDivs: [...document.getElementsByClassName("sub-nav-finder")]})
   }
 
   componentDidUpdate(previousProps){
+    console.log("Made it")
     if(previousProps.match.url !== this.props.match.url){
       this.setState({ subNavDivs: [...document.getElementsByClassName("sub-nav-finder")]})
     }

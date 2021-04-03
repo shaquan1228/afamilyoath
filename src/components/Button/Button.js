@@ -62,7 +62,7 @@ setStyle(){
                     <div
                           className='button'
                           style={myStyle}>
-                            <Link to={this.state.url}>{this.state.innerHTML}</Link>
+                            <Link to={'/'+this.state.url}>{this.state.innerHTML}</Link>
                     </div>
           )
       }else if(this.state.type==="sub"){

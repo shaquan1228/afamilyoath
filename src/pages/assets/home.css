@@ -1,0 +1,12 @@
+#home{
+  display:grid;
+  align-self: center;
+
+}
+#circle-1{
+  border-radius: 50%;
+  width:50vw;
+  height:50vw;
+
+  border:2px solid black;
+}

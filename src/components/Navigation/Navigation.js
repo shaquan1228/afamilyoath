@@ -49,7 +49,7 @@ setTimeout(() => {   document.getElementById("bag-main-nav").style.display="none
       <div id="main-nav">
 
           <div className="main-nav-big" id="main-nav-name">
-              <Button innerHTML="A Family Oath" url="/" type="main" styleType="light"/>
+              <Button innerHTML="A Family Oath" url="" type="main" styleType="light"/>
           </div>
           <div className="main-nav-small" id="main-nav-logo"></div>
           <div className="main-nav-big" id="main-nav-about">
