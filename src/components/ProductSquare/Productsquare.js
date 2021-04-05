@@ -18,8 +18,8 @@ class ProductSquare extends React.Component{
   render(){
     return(
       <div className="product_container">
-        <div className="image">
-          <img src={this.state.img} alt="shirt"/>
+        <div className="image-container">
+          <img className="product-image" src={this.state.img} alt="shirt"/>
         </div>
         <div className="description">
           <h2><Button innerHTML={this.state.title} url={this.state.productId} type="main" styleType="light"/></h2>

@@ -3,7 +3,6 @@ import Button from '../Button/Button.js';
 
 import './assets/DynamicProductPage.css';
 
-
 class DynamicProductPage extends React.Component{
   constructor(props){
     super(props);
@@ -19,16 +18,35 @@ class DynamicProductPage extends React.Component{
   render(){
     return(
       <div className="dynamic-container">
-        <img src={this.state.img} />
-        <div className="product-info">
-          <div className="product-title">
-            {this.state.title}
+        <img className="product-image" src={this.state.img} />
+        <div className="product-ui">
+          <div className="product-info">
+            <h3>{this.state.title}</h3>
+            <h4>{this.state.price}</h4>          
           </div>
-          <h4>{this.state.price}</h4>
+          <div className="inventory-buttons">
+            <div className="size-selection">
+              <input type="radio" value="email"
+              name="size" /> Small
+              <input type="radio" value="email"
+              name="size" /> Medium
+              <input type="radio" value="email"
+              name="size" /> Large 
+              <input type="radio" value="email"
+              name="size" /> Extra Large
+            </div>
+
+            <div className="add-to-cart">
+              <Button
+                onClick='' 
+                innerHTML="Add to Bag" 
+                url="" 
+                type="none" 
+                styleType="dark" />
+            </div>
+          </div>
         </div>
-        <div className="inventory-button">
-          {/* <radioButton ---> add radio small medium large*/}
-        </div>
+
         <div className="product-description">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat 
             interdum neque vitae dignissim. Cras at dolor id tellus lobortis lacinia nec 
