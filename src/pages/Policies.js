@@ -9,6 +9,8 @@ class Policies extends React.Component{
   constructor(props){
     super(props);
     this.state = {}
+    console.log(props.match.url)
+    console.log("Heresdfd")
 
   }
 

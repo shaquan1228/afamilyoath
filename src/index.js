@@ -27,8 +27,8 @@ ReactDOM.render(
           <Route path="/:a([A-Za-z]+)" component={Sidebar}/>
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/oath" component={Oath}/>
-            <Route path="/policies" component={Policies}/>
+            <Route exact path="/oath" component={Oath}/>
+            <Route exact path="/policies" component={Policies}/>
             <Route exact path="/shop" component={Catalog}/>
             <Route exact path="/shop/:id" component={DynamicProductPage}/>
           </Switch>

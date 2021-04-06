@@ -1,5 +1,7 @@
 import React from 'react';
 import Button from './../Button/Button.js';
+import {getCollections} from './../../apis/shopify.js';
+
 import './assets/Sidebar.css';
 
 
@@ -7,7 +9,8 @@ class Sidebar extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      open: true
+      open: true,
+      subNavDivs:[...document.getElementsByClassName("sub-nav-finder")]
     };
 
     this.handleOpen = this.handleOpen.bind(this);
@@ -15,15 +18,35 @@ class Sidebar extends React.Component{
   }
 
   componentDidMount(){
-    this.setState({  subNavDivs: [...document.getElementsByClassName("sub-nav-finder")]})
+   this.setState({  subNavDivs: [...document.getElementsByClassName("sub-nav-finder")]})
+   if(this.props.match.url==="/shop"){
+     getCollections().then(response=>{
+       let categories = []
+       response.reverse().map(function(node){ categories.push({id:node.title}) })
+       this.setState({subNavDivs: categories})
+     })
+   }
   }
 
+  componentWillUpdate(previousProps){
+
+  }
   componentDidUpdate(previousProps){
-    console.log("Made it")
-    if(previousProps.match.url !== this.props.match.url){
-      this.setState({ subNavDivs: [...document.getElementsByClassName("sub-nav-finder")]})
+    let ids = document.getElementsByClassName("sub-nav-finder")
+    if(previousProps.match.url !== this.props.match.url && this.props.match.url!="/shop"){
+      this.setState({ subNavDivs: [...ids]});
+    }else if(previousProps.match.url !== this.props.match.url && this.props.match.url==="/shop"){
+      // console.log("ER", ids)
+      console.log("HERE", this.props.match.url)
+      console.log(previousProps.match.url)
+          getCollections().then(response=>{
+            let categories = []
+            response.reverse().map(function(node){ categories.push({id:node.title}) })
+            this.setState({subNavDivs: categories})
+          })
     }
   }
+
 
   handleOpen(e){
     this.setState({open:true});
@@ -42,7 +65,6 @@ class Sidebar extends React.Component{
   }
 
   render(){
-
     return (
       <div id="sub-nav">
           <div id="sub-nav-grid">
@@ -62,6 +84,7 @@ class Sidebar extends React.Component{
       </div>
     )
   }
+
 }
 
 

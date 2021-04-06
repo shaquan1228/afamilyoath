@@ -9,6 +9,9 @@ const client = Client.buildClient({
 function getProduct(productId){
   return client.product.fetch(productId)
 }
+function getCollections(){
+    return client.collection.fetchAll()
+}
 
 
 function getProducts() {
@@ -37,7 +40,7 @@ function makePaymentSession(contactInfo, shippingAddress ){
   });
 }
 
-export {getProduct, getProducts,makePaymentSession}
+export {getProduct, getCollections, getProducts,makePaymentSession}
 
 //Old API call example
 // function apiCall(url, query) {
