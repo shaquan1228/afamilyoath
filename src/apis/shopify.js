@@ -9,6 +9,7 @@ const client = Client.buildClient({
 function getProduct(productId){
   return client.product.fetch(productId)
 }
+
 function getCollections(){
     return client.collection.fetchAll()
 }
@@ -41,15 +42,3 @@ function makePaymentSession(contactInfo, shippingAddress ){
 }
 
 export {getProduct, getCollections, getProducts,makePaymentSession}
-
-//Old API call example
-// function apiCall(url, query) {
-//   return fetch(url, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'X-Shopify-Storefront-Access-Token': "a224766064d3bb09a9ecdacaf5dd663d"
-//     },
-//     body: query
-//   }).then(response => {return response.json();});
-// }
