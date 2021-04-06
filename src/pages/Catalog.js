@@ -1,6 +1,6 @@
 import React from 'react';
 import {getProducts} from './../apis/shopify.js';
-import ProductSquare from './../components/ProductSquare/ProductSquare.js';
+import ProductSquare from '../components/ProductSquare/ProductSquare.js';
 
 
 
