@@ -10,22 +10,66 @@ class DynamicProductPage extends React.Component{
     super(props);
     this.state = {};
 
-    getProduct(props.match.params.id).then(response => {
-      console.log(response);
+    this.addToCart = this.addToCart.bind(this);
+    this.getVariantId = this.getVariantId.bind(this);
+    this.getVariantTitle = this.getVariantTitle.bind(this);
+  }
+
+  componentDidMount() {
+    getProduct(this.props.match.params.id).then(response => {
       this.setState({
-        product: response,
         title: response.title,
-        img: response.images[0].src,
+        img: response.images[0].src, 
         price: response.variants[0].price,
         variants: response.variants
       })
     })
-
   }
+
+  addToCart(e) {
+    e.preventDefault();
+    this.getVariantId(e.target);
+    let cartArray = JSON.parse(window.localStorage.getItem("Cart"));
+    cartArray.push({
+      title: this.state.title,
+      price: this.state.price,
+      img: this.state.img, // response.images[0].src for default image tile for bag
+      variantId: this.getVariantId(e.target),
+      variantName: this.getVariantTitle(e.target),
+      quantity: 1
+    })
+
+    window.localStorage.setItem("Cart", JSON.stringify(cartArray));
+  }
+
+  getVariantId(e) {
+    let variantId = null;
+    [...e].map(size => {
+      if (size.checked) {
+        variantId = size.value;
+        return;
+      }
+      return;
+    })
+    return variantId;
+  }
+
+  getVariantTitle(e) {
+    let variantTitle = null;
+    [...e].map(size => {
+      if (size.checked) {
+        variantTitle = size.name;
+        return;
+      }
+      return;
+    })
+    return variantTitle;
+  }
+
 //TODO: @Shaquan: add props to Productsquare
   render(){
     return (
-      this.state.product ? 
+      this.state.title ? 
       <div className="dynamic-container">
         <img className="product-image" src={this.state.img} />
         <div className="product-ui">
@@ -33,7 +77,7 @@ class DynamicProductPage extends React.Component{
             <h3>{this.state.title}</h3>
             <h4>{this.state.price}</h4>          
           </div>
-          <div className="inventory-buttons">
+          <form className="inventory-buttons" onSubmit={this.addToCart}>
             <div className="size-selection">
               {this.state.variants.map(variant => {
                 if (!variant.available) {
@@ -43,8 +87,8 @@ class DynamicProductPage extends React.Component{
                 return (
                   <label>
                     {variant.title}
-                    <input type="radio" value="email"
-                    name="size" /> 
+                    <input type="radio" value={variant.id}
+                    name={variant.title} /> 
                   </label>
                 )
               })}
@@ -52,13 +96,12 @@ class DynamicProductPage extends React.Component{
 
             <div className="add-to-cart">
               <Button
-                onClick='' 
                 innerHTML="Add to Bag" 
                 url="" 
-                type="none" 
+                type="submit" 
                 styleType="dark" />
             </div>
-          </div>
+          </form>
         </div>
 
         <div className="product-description">
