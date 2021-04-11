@@ -24,7 +24,7 @@ class Bag1 extends React.Component{
                     name={item.title}
                     variantId={item.variantId}
                     quantity={item.quantity}
-                    size ={item.variantTitle}
+                    size ={item.variantName}
                     price={item.price}
                   />
                 )
