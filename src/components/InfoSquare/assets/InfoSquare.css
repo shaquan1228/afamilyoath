@@ -19,3 +19,11 @@
   width: 100%;
   height: 100%;
 }
+
+.text_left{
+  white-space: break-spaces;
+}
+
+.text_right{
+  white-space: break-spaces;
+}

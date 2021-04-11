@@ -12,10 +12,16 @@
 
 .main-nav-small{
 /* border:1px solid black; */
+display: grid;
+align-items: center;
+
 }
 
-#main-nav-name{
-
+#main-nav-bag{
+  width: 50%;
+  height: 50%;
+  justify-self: center;
+  object-fit: scale-down;
 }
 
 #main-nav-logo{

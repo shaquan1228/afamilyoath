@@ -15,7 +15,6 @@ class Bag extends React.Component{
     this.queryUserInfo = this.queryUserInfo.bind(this);
     this.queryPurchase = this.queryPurchase.bind(this);
     this.handleReverse = this.handleReverse.bind(this);
-    // this.handleClose = this.handleClose.bind(this);
 
   }
 

@@ -1,124 +1,140 @@
-#home{
-  display:grid;
 
- /* filter: blur(10px); */
+#home{
+      grid-column: 1 / span 2;
+      display:grid;
+      justify-content: center;
+      align-items: center;
 }
+
 .circle{
+  grid-column:1;
+  grid-row:1;
   border-radius: 50%;
   width:40vw;
   height:40vw;
-position: absolute;
-  border-bottom:25px solid black;
+  border-bottom:10px solid gray;
+  transition: animation-duration 2s 3s;
+  background-size: 0 0;
 
 }
 
+.circle:hover{
+  border-color:red;
+  animation-duration:1s;
+}
+
+
+.home-image{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit: fill;
+}
+
+
+
+.circle:hover,circle{
+background-size: 100% 100%;
+  /* animation-duration:1s; */
+
+  filter:opacity(.5) blur(2px);
+
+}
 
 #circle-1{
-/* transform: rotateX(60deg), rotateY(40deg); */
-/* background: radial-gradient(circle at 100px 100px, #5cabff, #000); */
-
-border-bottom:5px solid black;
-
-animation: moveCircle1 1s ease infinite, moveCircle1 3s ease infinite;
+  /* background-color: #f3e6e8; */  
+  /* background-image: radial-gradient(circle , #f3e6e8 0%, #d5d0e5 74%); */
+animation: moveCircle1 3s linear infinite;
 }
 @keyframes moveCircle1{
-  0%{ transform: rotateZ(0deg); }
-  100%{ transform:  rotateZ(360deg);  }
+  from{ transform: rotateZ(0deg); }
+  to{ transform:  rotateZ(720deg);}
 }
 
 #circle-2{
-  transform: rotateX(280deg) rotateY(360deg);
-
-  animation: moveCircle2 1s ease infinite;
+  animation:  moveCircle2 3s linear infinite;
 }
 
 @keyframes moveCircle2{
-  0%{ transform: rotateX(280deg) rotateY(360deg) rotateZ(0deg); }
-  100%{ transform:  rotateX(280deg) rotateY(360deg) rotateZ(360deg);  }
+  from{ transform: rotateX(280deg) rotateY(360deg) rotateZ(0deg); }
+  to{ transform:  rotateX(280deg) rotateY(360deg) rotateZ(720deg); }
 }
 
 #circle-3{
-  transform: rotateX(280deg) rotateY(300deg);
-  /* animation: moveX 1s ease infinite; */
-  animation: moveCircle3 1s ease infinite;
+  animation:   moveCircle3 3s linear infinite;
 }
 @keyframes moveCircle3{
-  0%{ transform: rotateX(280deg) rotateY(300deg) rotateZ(0deg); }
-  100%{ transform:  rotateX(280deg) rotateY(300deg) rotateZ(360deg);  }
+  from{ transform: rotateX(280deg) rotateY(300deg) rotateZ(0deg); }
+  to{ transform:  rotateX(280deg) rotateY(300deg) rotateZ(720deg);  }
 }
 
 #circle-4{
-  transform: rotateX(280deg) rotateY(242deg);
-  animation: moveCircle4 1s ease infinite;
+  animation: moveCircle4 3s linear infinite;
 }
 @keyframes moveCircle4{
-  0%{ transform: rotateX(280deg) rotateY(242deg) rotateZ(0deg); }
-  100%{ transform:  rotateX(280deg) rotateY(242deg) rotateZ(360deg);  }
+  from{ transform: rotateX(0deg) rotateY(269deg)  }
+  to{ transform:  rotateX(720deg) rotateY(269deg) ;  }
 }
 
 #circle-5{
-  border-bottom: 5px solid black;
-  transform: rotateX(200deg) rotateY(265deg);
-  animation: moveCircle5 1s ease infinite;
+  border: 5px solid black;
+  animation: moveCircle5 3s linear infinite;
 }
 @keyframes moveCircle5{
-  0%{ transform: rotateX(200deg) rotateY(265deg) rotateZ(0deg); }
-  100%{ transform: rotateX(200deg) rotateY(265deg)  rotateZ(360deg);  }
+  from{ transform: rotateX(0deg) rotateY(0deg); }
+  to{ transform: rotateX(0deg) rotateY(720deg) ;   }
 }
 
 #circle-6{
-  transform: rotateX(280deg) rotateY(300deg);
-  animation: moveCircle6 1s ease infinite;
+  border: 5px solid black;
+  animation: moveCircle6 3s linear infinite;
 }
 
 @keyframes moveCircle6{
-  0%{ transform: rotateX(280deg) rotateY(300deg) rotateZ(0deg); }
-  100%{ transform: rotateX(280deg) rotateY(300deg) rotateZ(360deg);  }
+  from{ transform: rotateX(280deg) rotateY(0deg); }
+  to{ transform: rotateX(280deg) rotateY(720deg);  }
 }
 
 
 #circle-7{
   transform: rotateX(280deg) rotateY(360deg);
-  animation: moveCircle7 1s ease infinite;
+  animation:  moveCircle7 3s linear infinite;
   border-bottom:none;
   border-top:5px solid black;
 }
 
 @keyframes moveCircle7{
-  0%{ transform: rotateX(0deg); }
-  100%{ transform:  rotateX(360deg);  }
+  from{ transform: rotateX(0deg); }
+  to{ transform:  rotateX(360deg);  }
 }
 
 #circle-8{
-  transform: rotateX(280deg) rotateY(397deg);
-  animation: moveCircle8 1s ease infinite;
+  animation:  moveCircle8 3s linear infinite;
 }
 @keyframes moveCircle8{
-  0%{ transform: rotateX(280deg) rotateY(397deg) rotateZ(0deg); }
-  100%{ transform: rotateX(280deg) rotateY(397deg) rotateZ(360deg);  }
+  from{ transform: rotateY(60deg) rotateZ(0deg); }
+  to{ transform: rotateY(60deg) rotateZ(360deg);  }
 }
 
 #circle-9{
-  transform: rotateX(280deg) rotateY(155deg);
-  animation: moveCircle9 1s ease infinite;
+  animation: moveCircle9 3s linear infinite;
 }
 @keyframes moveCircle9{
-  0%{ transform: rotateX(280deg) rotateY(155deg) rotateZ(0deg); }
-  100%{ transform:  rotateX(0deg) rotateY(155deg) rotateZ(360deg);  }
+  from{ transform: rotateX(0deg) rotateY(172deg); }
+  to{ transform:  rotateX(720deg) rotateY(172deg);  }
 }
 
 
 #circle-10{
-  transform: rotateX(280deg) rotateY(0deg) rotateZ(360deg);
-  animation: moveCircle10 1s ease infinite;
+  animation:   moveCircle10 3s linear infinite;
 }
 @keyframes moveCircle10{
-  0%{ transform: rotateX(280deg) rotateY(0deg) rotateZ(360deg); }
-  100%{ transform: rotateX(280deg) rotateY(360deg) rotateZ(360deg);  }
+  from{ transform: rotateX(100deg) rotateY(300deg) rotateZ(0deg); }
+  to{ transform: rotateX(100deg) rotateY(300deg) rotateZ(720deg);  }
 }
 
 
 @keyframes moveCircle{
-  0%{ transform: rotateZ(0deg); }
-  100%{ transform:  rotateZ(360deg);  }
+  from{ transform: rotateZ(0deg); }
+  to{ transform:  rotateZ(360deg);  }
 }

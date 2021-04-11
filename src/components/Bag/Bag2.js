@@ -6,13 +6,13 @@ import './assets/Bag2.css';
 class Bag2 extends React.Component{
   constructor(props){
     super(props);
-    this.state = {pageFinished: props.pageFinished}
+    this.state = {}
 
   }
 
   render(){
     return(
-        <div className="container" id="payment-container">
+
 
         <form id ="payment-form">
         <div className = "payment-row" id="payment-contactInfo">
@@ -47,7 +47,7 @@ class Bag2 extends React.Component{
 
 
         </form>
-        </div>
+      
     )
   }
 

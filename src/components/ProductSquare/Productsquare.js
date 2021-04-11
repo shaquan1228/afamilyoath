@@ -7,12 +7,7 @@ import './assets/ProductSquare.css';
 class ProductSquare extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      title: props.title,
-      img: props.img,
-      productId: props.id,
-      price: props.price
-    }
+    this.state = {}
 
   }
 
@@ -20,11 +15,11 @@ class ProductSquare extends React.Component{
     return(
       <div className="product_container">
         <div className="image">
-          <img className="image-div" src={this.state.img} alt="shirt"/>
+          <img className="image-div" src={this.props.img} alt="shirt"/>
         </div>
         <div className="description">
-          <h2><Button innerHTML={this.state.title} url={'shop/'+this.state.productId} type="main" styleType="light"/></h2>
-          <h3> ${this.state.price} </h3>
+          <h2><Button innerHTML={this.props.title} url={'shop/'+this.props.productId} type="main" styleType="light"/></h2>
+          <h3> ${this.props.price} </h3>
         </div>
       </div>
     )

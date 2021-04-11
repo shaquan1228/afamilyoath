@@ -6,9 +6,7 @@ import './assets/Bag1.css';
 class Bag1 extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-
-    }
+    this.state = {}
 
   }
 

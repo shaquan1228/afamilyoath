@@ -2,7 +2,8 @@
     display:grid;
     /* grid-template-columns: 25% 75%; */
     grid-template-columns: fit-content(100%) auto fit-content(30%);
-    height:88vh;
+    /* height:80vh; */
+    height:-webkit-fill-available;
     grid-column-gap: 1%;
 }
 

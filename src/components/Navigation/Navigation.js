@@ -36,11 +36,13 @@ setTimeout(() => {   document.getElementById("bag-main-nav").style.display="none
 
   }
   openBag(){
-      this.state.bagOpen
+console.log("here")
+
+      !this.state.bagOpen
           ?  this.handleOpen()
           :  this.handleClose()
+this.setState({ bagOpen: !this.state.bagOpen})
 
-      this.setState({ bagOpen: !this.state.bagOpen})
   }
 
 
@@ -61,8 +63,8 @@ setTimeout(() => {   document.getElementById("bag-main-nav").style.display="none
           <div className="main-nav-big" id="main-nav-policies">
                 <Button innerHTML="Policies" url="policies" type="main" styleType="light"/>
           </div>
-          <div onClick={this.openBag} className="main-nav-small" id="main-nav-bag">
-              <i className="fa fa-shopping-cart"/>
+          <div onClick={this.openBag} className="main-nav-small" >
+            <img id="main-nav-bag" src='./cart.png'/>
           </div>
       </div>
     )

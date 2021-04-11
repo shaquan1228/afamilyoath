@@ -36,9 +36,6 @@ class Sidebar extends React.Component{
     if(previousProps.match.url !== this.props.match.url && this.props.match.url!="/shop"){
       this.setState({ subNavDivs: [...ids]});
     }else if(previousProps.match.url !== this.props.match.url && this.props.match.url==="/shop"){
-      // console.log("ER", ids)
-      console.log("HERE", this.props.match.url)
-      console.log(previousProps.match.url)
           getCollections().then(response=>{
             let categories = []
             response.reverse().map(function(node){ categories.push({id:node.title}) })

@@ -7,48 +7,43 @@ import './assets/InfoSquare.css';
 class InfoSquare extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      title: props.title,
-      img: props.img,
-      innerHTML: props.innerHTML,
-      style: props.style 
-    }
+    this.state = {}
   }
   render(){
     return(
-      <div id={this.state.title} className="sub-nav-finder">
+      <div id={this.props.title} className="sub-nav-finder">
         {
-          this.state.img &&
-          this.state.style === 'img_right' &&
+          this.props.img &&
+          this.props.style === 'img_right' &&
           <div className='wrapper_img_right'>
             <div className='text_left'>
-              <h1>{this.state.title}</h1>
-              <p>{this.state.innerHTML}</p>
+              <h1>{this.props.title}</h1>
+              <p>{this.props.innerHTML}</p>
             </div>
             <div className='image_right'>
-              <img className="infosquare-image" src={this.state.img} alt="This is my infoImg"/>
+              <img className="infosquare-image" src={this.props.img} alt="This is my infoImg"/>
             </div>
           </div>
         }
         {
-          this.state.img &&
-          this.state.style === 'img_left' &&
+          this.props.img &&
+          this.props.style === 'img_left' &&
           <div className='wrapper_img_left'>
             <div className='image_left'>
-              <img className="infosquare-image" src={this.state.img} alt="This is my infoImg"/>
+              <img className="infosquare-image" src={this.props.img} alt="This is my infoImg"/>
             </div>
             <div className='text_right'>
-              <h1>{this.state.title}</h1>
-              <p>{this.state.innerHTML}</p>
+              <h1>{this.props.title}</h1>
+              <p>{this.props.innerHTML}</p>
             </div>
           </div>
         }
         {
-          !this.state.img &&
+          !this.props.img &&
           <div className='wrapper_null_img'>
             <div className='text_right'>
-              <h1>{this.state.title}</h1>
-              <p>{this.state.innerHTML}</p>
+              <h1>{this.props.title}</h1>
+              <p>{this.props.innerHTML}</p>
             </div>
           </div>
         }

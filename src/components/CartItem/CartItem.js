@@ -18,7 +18,7 @@ class CartItem extends React.Component{
 
 
   decreaseQty(){
-    this.setState({quantity:this.state.quantity-1});
+    this.setState({quantity:this.props.quantity-1});
   }
 
   increaseQty(){
@@ -30,11 +30,11 @@ class CartItem extends React.Component{
           ?(
             <div className="cart-item">
                 <div id="cart-stock-img-placeholder">
-                  <img className="cart-stock-img" src={this.state.imgUrl}/>
+                  <img className="cart-stock-img" src={this.props.imgUrl}/>
                 </div>
                 <div className="cart-text">
-                    <div className="cart-stock-text">{this.state.name}</div>
-                    <div className="cart-stock-text">Size: {this.state.size}</div>
+                    <div className="cart-stock-text">{this.props.name}</div>
+                    <div className="cart-stock-text">Size: {this.props.size}</div>
                     <div className="cart-stock-text cart-quantity-row">
                         <div onClick={this.decreaseQty} className="qty-btn">
                           <Button styleType='light' type={null} innerHTML='-'/>
