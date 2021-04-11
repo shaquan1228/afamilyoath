@@ -11,10 +11,10 @@ import Test from './pages/Test.js';
 import Home from './pages/Home.js';
 import Oath from './pages/Oath.js';
 import Policies from './pages/Policies.js';
+
 import Catalog from './pages/Catalog.js';
 
 import './index.css';
-
 
 ReactDOM.render(
   <BrowserRouter>

@@ -1,22 +1,31 @@
 import React from 'react';
 import Button from '../Button/Button.js';
 
+import { getProduct } from '../../apis/shopify.js';
+
 import './assets/DynamicProductPage.css';
 
 class DynamicProductPage extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      title: "Product Name",
-      img: "https://icons.iconarchive.com/icons/iconsmind/outline/256/T-Shirt-icon.png",
-      price: "$99.00",
-      productId: "00567",
-    }
+    this.state = {};
+
+    getProduct(props.match.params.id).then(response => {
+      console.log(response);
+      this.setState({
+        product: response,
+        title: response.title,
+        img: response.images[0].src,
+        price: response.variants[0].price,
+        variants: response.variants
+      })
+    })
 
   }
 //TODO: @Shaquan: add props to Productsquare
   render(){
-    return(
+    return (
+      this.state.product ? 
       <div className="dynamic-container">
         <img className="product-image" src={this.state.img} />
         <div className="product-ui">
@@ -26,14 +35,19 @@ class DynamicProductPage extends React.Component{
           </div>
           <div className="inventory-buttons">
             <div className="size-selection">
-              <input type="radio" value="email"
-              name="size" /> Small
-              <input type="radio" value="email"
-              name="size" /> Medium
-              <input type="radio" value="email"
-              name="size" /> Large 
-              <input type="radio" value="email"
-              name="size" /> Extra Large
+              {this.state.variants.map(variant => {
+                if (!variant.available) {
+                  return;
+                }
+                
+                return (
+                  <label>
+                    {variant.title}
+                    <input type="radio" value="email"
+                    name="size" /> 
+                  </label>
+                )
+              })}
             </div>
 
             <div className="add-to-cart">
@@ -59,8 +73,8 @@ class DynamicProductPage extends React.Component{
             sapien in dignissim gravida, urna magna dignissim leo, sed pretium eros ex id 
             nisl.</p>
         </div>
-
       </div>
+      : <div>404 error no data found</div>
     )
   }
 }
