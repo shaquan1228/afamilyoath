@@ -8,8 +8,10 @@ class Oath extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      info:{
-        "Philosophy": { imgUrl:"",
+      info:[
+         { title:"Philosophy",
+           imgUrl:"",
+
                   text:[
                     "A Family OATH is an American luxury brand that embraces the outsiders. We are a  community-based brand that thrives off the idea of being counted out and beating the  odds.",
                     "We understand that that everyone may not see the vision right away, but their time will  come.",
@@ -18,7 +20,8 @@ class Oath extends React.Component{
                     "With a commitment to detail and quality, OATH creates products that are regarded as  groundbreaking, timeless and unique. \"We are about originality and authenticity and at  our core we want to challenge identity, exclusion, and perspective.\""
                   ]
                 },
-        "MY BEGINNINGS, MY STORY":{imgUrl:"",
+        {title:"MY BEGINNINGS, MY STORY",
+          imgUrl:"",
                   text:[
                     "CHALO POPE, Founder and Creative Director",
                     "Chalo Pope is a multi-disciplinary contemporary artist from Newark, NJ. ",
@@ -27,7 +30,8 @@ class Oath extends React.Component{
                     "Chalo envisions this American luxury brand to be home to the culturally aware who  resonate with feeling like the black sheep or outsider of the community. Oftentimes,  Chalo used OATH as his place of refuge and hopes it can be the same for others that  share his sentiment. ",
                     "Through OATH, Chalo hopes to create an inclusive world that values and supports the  under-appreciated and under-represented who follow the path of their own heart."
                   ]
-                            }
+          }
+        ]
       }
     }
 
