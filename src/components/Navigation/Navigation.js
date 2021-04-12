@@ -64,7 +64,7 @@ this.setState({ bagOpen: !this.state.bagOpen})
                 <Button innerHTML="Policies" url="policies" type="main" styleType="light"/>
           </div>
           <div onClick={this.openBag} className="main-nav-small" >
-            <img id="main-nav-bag" src='./cart.png'/>
+            <img id="main-nav-bag" src='cart.png'/>
           </div>
       </div>
     )
