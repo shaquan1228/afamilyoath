@@ -16,6 +16,14 @@ import Catalog from './pages/Catalog.js';
 
 import './index.css';
 
+if (!window.localStorage.getItem("Cart")) {
+  try {
+    window.localStorage.setItem("Cart", JSON.stringify([]));
+  } catch(err) {
+
+  }
+}
+
 ReactDOM.render(
   <BrowserRouter>
       <div>

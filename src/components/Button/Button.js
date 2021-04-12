@@ -60,22 +60,30 @@ setStyle(){
       if(this.state.type==="main"){
             return (
                     <div
-                          className='button'
-                          style={myStyle}>
-                            <Link to={'/'+this.state.url}>{this.state.innerHTML}</Link>
+                      className='button'
+                      style={myStyle}>
+                        <Link to={'/'+this.state.url}>{this.state.innerHTML}</Link>
                     </div>
           )
       }else if(this.state.type==="sub"){
             return(
                 <div
-                       className='button'
-                       onClick={this.handleClick}
-                       style={myStyle}>
-                         {this.state.innerHTML}
+                  className='button'
+                  onClick={this.handleClick}
+                  style={myStyle}>
+                    {this.state.innerHTML}
 
-                   </div>
+                </div>
             )
-      }else{
+      } else if (this.state.type === "submit") {
+        return(
+          <input
+            className='button'
+            style={myStyle}
+            type="submit"
+            value={this.state.innerHTML} />
+        )
+      } else {
         return(
           <div
                  className='button'
