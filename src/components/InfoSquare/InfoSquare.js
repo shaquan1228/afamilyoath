@@ -18,7 +18,11 @@ class InfoSquare extends React.Component{
           <div className='wrapper_img_right'>
             <div className='text_left'>
               <h1>{this.props.title}</h1>
-              <p>{this.props.innerHTML}</p>
+              {
+                this.props.innerHTML.map(row => {
+                  return <p>{row}</p>
+                })
+              }
             </div>
             <div className='image_right'>
               <img className="infosquare-image" src={this.props.img} alt="This is my infoImg"/>
@@ -34,7 +38,11 @@ class InfoSquare extends React.Component{
             </div>
             <div className='text_right'>
               <h1>{this.props.title}</h1>
-              <p>{this.props.innerHTML}</p>
+              {
+                this.props.innerHTML.map(row => {
+                  return <p>{row}</p>
+                })
+              }
             </div>
           </div>
         }
@@ -43,7 +51,11 @@ class InfoSquare extends React.Component{
           <div className='wrapper_null_img'>
             <div className='text_right'>
               <h1>{this.props.title}</h1>
-              <p>{this.props.innerHTML}</p>
+              {
+                this.props.innerHTML.map(row => {
+                  return <p>{row}</p>
+                })
+              }
             </div>
           </div>
         }
