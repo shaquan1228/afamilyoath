@@ -35,9 +35,6 @@ class Oath extends React.Component{
       }
     }
 
-  }
-
-
   render(){
     return(
       <div className="business-logic-right">
