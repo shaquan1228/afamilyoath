@@ -4,13 +4,13 @@ import './assets/InfoSquare.css';
 
 
 
-class InfoSquare extends React.Component{
-  constructor(props){
+class InfoSquare extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {}
   }
-  render(){
-    return(
+  render() {
+    return (
       <div id={this.props.title} className="sub-nav-finder">
         {
           this.props.img &&
@@ -25,7 +25,7 @@ class InfoSquare extends React.Component{
               }
             </div>
             <div className='image_right'>
-              <img className="infosquare-image" src={this.props.img} alt="This is my infoImg"/>
+              <img className="infosquare-image" src={this.props.img} alt="This is my infoImg" />
             </div>
           </div>
         }
@@ -34,7 +34,7 @@ class InfoSquare extends React.Component{
           this.props.style === 'img_left' &&
           <div className='wrapper_img_left'>
             <div className='image_left'>
-              <img className="infosquare-image" src={this.props.img} alt="This is my infoImg"/>
+              <img className="infosquare-image" src={this.props.img} alt="This is my infoImg" />
             </div>
             <div className='text_right'>
               <h1>{this.props.title}</h1>

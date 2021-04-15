@@ -7,8 +7,6 @@
   grid-template-columns: 80% 20%;
 
 }
-
-
 #sub-nav-grid{
   display:grid;
   grid-template-rows:auto;
@@ -17,18 +15,16 @@
   align-items: center;
   /* width:23vw; */
 }
+
+
 .sub-nav-button{
   text-align: center;
   white-space: pre-wrap;
+  margin:5%;
 
 }
 
 .left{
-  /* font-size: xx-large;
-  width: 100%;
-  display: grid;
-  text-align: right; */
-
   text-align: center;
   grid-column: 2;
   margin:auto;
@@ -42,3 +38,5 @@
   /* text-align: right; */
   margin: auto;
 }
+
+

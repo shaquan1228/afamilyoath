@@ -20,6 +20,7 @@ class DynamicProductPage extends React.Component{
       this.setState({
         title: response.title,
         img: response.images[0].src, 
+        description: response.description,
         price: response.variants[0].price,
         variants: response.variants
       })
@@ -66,58 +67,51 @@ class DynamicProductPage extends React.Component{
     return variantTitle;
   }
 
-//TODO: @Shaquan: add props to Productsquare
+
   render(){
     return (
-      this.state.title ? 
-      <div className="dynamic-container">
-        <img className="product-image" src={this.state.img} />
-        <div className="product-ui">
-          <div className="product-info">
-            <h3>{this.state.title}</h3>
-            <h4>{this.state.price}</h4>          
-          </div>
-          <form className="inventory-buttons" onSubmit={this.addToCart}>
-            <div className="size-selection">
-              {this.state.variants.map(variant => {
-                if (!variant.available) {
-                  return;
-                }
-                
-                return (
-                  <label>
-                    {variant.title}
-                    <input type="radio" value={variant.id}
-                    name={variant.title} /> 
-                  </label>
-                )
-              })}
-            </div>
+      this.state.title 
+      ?  ( 
+            <div className="dynamic-container">
+              <img className="product-image" src={this.state.img} />
+              <div className="product-ui">
+                <div className="product-info">
+                  <h3>{this.state.title}</h3>
+                  <h4>{this.state.price}</h4>          
+                </div>
+                <form className="inventory-buttons" onSubmit={this.addToCart}>
+                  <div className="size-selection">
+                    {this.state.variants.map(variant => {
+                      if (!variant.available) {
+                        return;
+                      }
+                      
+                      return (
+                        <label>
+                          {variant.title}
+                          <input type="radio" value={variant.id}
+                          name={variant.title} /> 
+                        </label>
+                      )
+                    })}
+                  </div>
+{/*TODO:disable add to cart button if no variant is selected*/}
+                  <div className="add-to-cart">
+                    <Button
+                      innerHTML="Add to Bag" 
+                      url="" 
+                      type="submit" 
+                      styleType="dark" />
+                  </div>
+                </form>
+              </div>
 
-            <div className="add-to-cart">
-              <Button
-                innerHTML="Add to Bag" 
-                url="" 
-                type="submit" 
-                styleType="dark" />
+              <div className="product-description">
+                    {this.state.description}
+              </div>
             </div>
-          </form>
-        </div>
-
-        <div className="product-description">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat 
-            interdum neque vitae dignissim. Cras at dolor id tellus lobortis lacinia nec 
-            eu risus. Cras quis lorem in ex pretium blandit. Nam et tristique lectus, quis 
-            varius urna. Ut eros orci, lobortis nec euismod nec, lacinia et dui. Phasellus 
-            dictum massa eget felis consequat mattis. In nec molestie ante. Mauris eget 
-            commodo sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus 
-            scelerisque in magna vel bibendum. Quisque sagittis lacus id sem fringilla, sit 
-            amet condimentum elit venenatis. Aliquam eget tellus lectus. Sed sollicitudin, 
-            sapien in dignissim gravida, urna magna dignissim leo, sed pretium eros ex id 
-            nisl.</p>
-        </div>
-      </div>
-      : <div>404 error no data found</div>
+          )
+      : (<div className="dynamic-container"> Loading data...</div>)
     )
   }
 }
