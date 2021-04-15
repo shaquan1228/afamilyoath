@@ -13,5 +13,42 @@
 .bag-change{
   display:grid;
   justify-content: end;
-  margin-right: 3vw;
+  margin-right: 4vw;
 }
+
+.bag-up{
+animation: moveUp 1s ease infinite;
+}
+
+@keyframes moveUp{
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+  
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+
+.bag-left{
+  animation: moveLeft 1s ease infinite;
+  }
+  
+  @keyframes moveLeft{
+    0%{
+      transform:translateX(0px);
+    }
+  
+    50%{
+      transform:translateX(-10px);
+    }
+    
+    100%{
+      transform:translateX(0px);
+    }
+  }

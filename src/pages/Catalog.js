@@ -1,23 +1,27 @@
 import React from 'react';
-import {getProducts} from './../apis/shopify.js';
+import {
+  getProducts
+} from './../apis/shopify.js';
 import ProductSquare from '../components/ProductSquare/ProductSquare.js';
 
 
 
-class Catalog extends React.Component{
-  constructor(props){
+class Catalog extends React.Component {
+  constructor(props) {
     super(props);
-    this.state = {products:null}
-    getProducts().then(response=>{
+    this.state = {
+      products: null
+    }
+    getProducts().then(response => {
       this.setState({
-        products: response.reverse()})
+        products: response.reverse()
+      })
     });
   }
 
-  render(){
-
+  render() {
     return(
-      <div className="business-logic-right catalog">
+      <div className="business-logic-right">
 
           { this.state.products
                   ? this.state.products.map(function(collection){
