@@ -13,7 +13,6 @@ class Bag1 extends React.Component {
   
   
   render() {
-    console.log(this.props.cart)
     return (
       <div id="bag-sub-nav">
         <div className="bag-stock-text">Shopping Bag</div>
@@ -23,12 +22,17 @@ class Bag1 extends React.Component {
           {
             this.props.cart &&
             this.props.cart.map(item => {
+
               return (
                 <CartItem
                   imgUrl={item.img}
+                  id = {item.id}
                   name={item.title}
                   variantId={item.variantId}
                   quantity={item.quantity}
+                  increaseQty={this.props.increaseQty} 
+                  decreaseQty={this.props.decreaseQty}
+                  removeFromCart = {this.props.removeFromCart}
                   size={item.variantName}
                   price={item.price}
                 />

@@ -27,7 +27,7 @@ class Sidebar extends React.Component {
       this.setState({ subNavDivs: [...document.getElementsByClassName("sub-nav-finder")] })
     }
 
-    if(window.innerWidth<500 && this.state.open){ console.log("here");this.handleClose()}
+    if(window.innerWidth<500 && this.state.open){ this.handleClose()}
   }
 
   componentDidUpdate(previousProps) {

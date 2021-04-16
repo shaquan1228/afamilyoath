@@ -96,7 +96,12 @@ class Bag extends React.Component {
         {
           this.state.readyToPurchase
             ? <Bag2 cart={this.props.cart}/>
-            : <Bag1 quantity={this.props.quantity} cart={this.props.cart}  />
+            : (<Bag1 
+                quantity={this.props.quantity} 
+                cart={this.props.cart}  
+                increaseQty={this.props.increaseQty}  
+                decreaseQty={this.props.decreaseQty}  
+                removeFromCart={this.props.removeFromCart}/>)
         }
         <div onClick={this.state.readyToPurchase ? this.queryPurchase : this.queryUserInfo} className="bag-stock-button">
           <Button innerHTML={this.state.buttonInnerHTML} url={null} type={null} styleType="dark" />

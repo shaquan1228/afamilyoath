@@ -1,66 +1,48 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Button from './../Button/Button.js';
 import './assets/CartItem.css';
 
 class CartItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      itemQuantity: this.props.quantity
-    }
+    this.state = {}
 
-    this.decreaseQty = this.decreaseQty.bind(this);
-    this.increaseQty = this.increaseQty.bind(this);
-  }
-
-  decreaseQty() {
-    const cart = JSON.parse(window.localStorage.getItem("Cart"));
-    let index = cart.findIndex(element => element.variantId === this.props.variantId)
-    if (index > -1) {
-      cart[index].quantity -= 1;
-      window.localStorage.setItem("Cart", JSON.stringify(cart))
-      this.setState({ itemQuantity: cart[index].quantity })
-    }
 
   }
 
-  increaseQty() {
-    const cart = JSON.parse(window.localStorage.getItem("Cart"));
-    let index = cart.findIndex(element => element.variantId === this.props.variantId)
-    if (index > -1) {
-      cart[index].quantity += 1;
-      window.localStorage.setItem("Cart", JSON.stringify(cart))
-      this.setState({ itemQuantity: cart[index].quantity })
-    }
-  }
+
 
   render() {
+    console.log(this.props)
     return (
-      this.state.itemQuantity > 0
+      this.props.quantity > 0
         ? (
             <div className="cart-item">
-{/*TODO: Link cart to DPP by id */}
-              <div id="cart-stock-img-placeholder">
-                <img className="cart-stock-img" src={this.props.imgUrl} />
-              </div>
-              <div className="cart-text">
-                <div className="cart-stock-text">{this.props.name}</div>
-                <div className="cart-stock-text">Size: {this.props.size}</div>
-                <div className="cart-stock-text cart-quantity-row">
-                  <div onClick={this.decreaseQty} className="qty-btn">
-                    <Button styleType='light' type={null} innerHTML='-' />
-                  </div>
-                  Quantity: {this.state.itemQuantity}
-                  <div onClick={this.increaseQty} className="qty-btn">
-                    <Button styleType='light' type={null} innerHTML='+' />
-                  </div>
+              
+                <div id="cart-stock-img-placeholder">
+                  <img className="cart-stock-img" src={this.props.imgUrl} />
                 </div>
-                <div className="cart-stock-text">${this.props.price}</div>
-{/*TODO: Make Remove From Cart remove object from cart list */}
-                <div className="removeButton">Remove From Cart</div>
-              </div>
-
+                <div className="cart-text">
+                  <div className="cart-stock-text">
+                    <Button type="main" styleType="light" innerHTML={this.props.name} url={'/shop/' + this.props.id}/>
+                    </div>
+                  <div className="cart-stock-text">Size: {this.props.size}</div>
+                  <div className="cart-stock-text cart-quantity-row">
+                    <div onClick={()=>this.props.decreaseQty(this.props.variantId)} className="qty-btn">
+                      <Button styleType='light' type={null} innerHTML='-' />
+                    </div>
+                    Quantity: {this.props.quantity}
+                    <div onClick={()=>this.props.increaseQty(this.props.variantId)} className="qty-btn">
+                      <Button styleType='light' type={null} innerHTML='+' />
+                    </div>
+                  </div>
+                  <div className="cart-stock-text">${this.props.price}</div>
+                    <div onClick={()=>this.props.removeFromCart(this.props.variantId)} className="removeButton">Remove From Cart</div>
+                </div>
+              
             </div>
+            
           )
         : (null)
     )

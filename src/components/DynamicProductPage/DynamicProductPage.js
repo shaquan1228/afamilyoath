@@ -9,15 +9,12 @@ class DynamicProductPage extends React.Component{
   constructor(props){
     super(props);
     this.state = {};
-
-    this.addToCart = this.addToCart.bind(this);
-    this.getVariantId = this.getVariantId.bind(this);
-    this.getVariantTitle = this.getVariantTitle.bind(this);
   }
 
   componentDidMount() {
     getProduct(this.props.match.params.id).then(response => {
       this.setState({
+        id: response.id,
         title: response.title,
         img: response.images[0].src, 
         description: response.description,
@@ -27,49 +24,20 @@ class DynamicProductPage extends React.Component{
     })
   }
 
-  addToCart(e) {
-    e.preventDefault();
-    const variantID = this.getVariantId(e.target);
-    let cartArray = JSON.parse(window.localStorage.getItem("Cart"));
-    let index = cartArray.findIndex(element => element.variantId === variantID)
-    if (index > -1) {
-      cartArray[index].quantity += 1;
-    } else {
-      cartArray.push({
-        title: this.state.title,
-        price: this.state.price,
-        img: this.state.img, // response.images[0].src for default image tile for bag
-        variantId: variantID,
-        variantName: this.getVariantTitle(e.target),
-        quantity: 1
+ componentDidUpdate(previousProps){
+  if(this.props.match.params.id !== previousProps.match.params.id){
+    getProduct(this.props.match.params.id).then(response => {
+      this.setState({
+        id: response.id,
+        title: response.title,
+        img: response.images[0].src, 
+        description: response.description,
+        price: response.variants[0].price,
+        variants: response.variants
       })
-    }
-    window.localStorage.setItem("Cart", JSON.stringify(cartArray));
-  }
-
-  getVariantId(e) {
-    let variantId = null;
-    [...e].map(size => {
-      if (size.checked) {
-        variantId = size.value;
-        return;
-      }
-      return;
     })
-    return variantId;
   }
-
-  getVariantTitle(e) {
-    let variantTitle = null;
-    [...e].map(size => {
-      if (size.checked) {
-        variantTitle = size.name;
-        return;
-      }
-      return;
-    })
-    return variantTitle;
-  }
+ }
 
 
   render(){
@@ -83,7 +51,7 @@ class DynamicProductPage extends React.Component{
                   <h3>{this.state.title}</h3>
                   <h4>{this.state.price}</h4>          
                 </div>
-                <form className="inventory-buttons" onSubmit={this.addToCart}>
+                <form className="inventory-buttons" onSubmit={(e)=>{this.props.addToCart(e,this.state)}}>
                   <div className="size-selection">
                     {this.state.variants.map(variant => {
                       if (!variant.available) {
