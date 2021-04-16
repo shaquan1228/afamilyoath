@@ -25,7 +25,7 @@ class CartItem extends React.Component {
                 </div>
                 <div className="cart-text">
                   <div className="cart-stock-text">
-                    <Button type="main" styleType="light" innerHTML={this.props.name} url={'/shop/' + this.props.id}/>
+                    <Button type="main" styleType="light" innerHTML={this.props.name} url={'shop/' + this.props.id}/>
                     </div>
                   <div className="cart-stock-text">Size: {this.props.size}</div>
                   <div className="cart-stock-text cart-quantity-row">
