@@ -10,28 +10,31 @@ class Bag1 extends React.Component {
 
   }
 
- 
+  
   
   render() {
-    const cart = JSON.parse(window.localStorage.getItem("Cart"));
+    console.log(this.props.cart)
     return (
       <div id="bag-sub-nav">
         <div className="bag-stock-text">Shopping Bag</div>
 {/* TODO: update # of items to reflect actual length in cart. sum of quantities of each object */}
-        <div className="bag-stock-text"> You have {cart.length} items in your cart.</div>
+        <div className="bag-stock-text"> You have {this.props.quantity} items in your cart.</div>
         <div id="bag-cart-list">
-          {cart.map(item => {
-            return (
-              <CartItem
-                imgUrl={item.img}
-                name={item.title}
-                variantId={item.variantId}
-                quantity={item.quantity}
-                size={item.variantName}
-                price={item.price}
-              />
-            )
-          })}
+          {
+            this.props.cart &&
+            this.props.cart.map(item => {
+              return (
+                <CartItem
+                  imgUrl={item.img}
+                  name={item.title}
+                  variantId={item.variantId}
+                  quantity={item.quantity}
+                  size={item.variantName}
+                  price={item.price}
+                />
+              )
+            })
+          }
         </div>
         <div id="bag-shipping" className="bag-stock-text">Shipping: $7.00</div>
 

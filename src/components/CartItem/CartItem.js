@@ -50,7 +50,7 @@ class CartItem extends React.Component {
                   <div onClick={this.decreaseQty} className="qty-btn">
                     <Button styleType='light' type={null} innerHTML='-' />
                   </div>
-                          Quantity: {this.state.itemQuantity}
+                  Quantity: {this.state.itemQuantity}
                   <div onClick={this.increaseQty} className="qty-btn">
                     <Button styleType='light' type={null} innerHTML='+' />
                   </div>

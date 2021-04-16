@@ -29,17 +29,21 @@ class DynamicProductPage extends React.Component{
 
   addToCart(e) {
     e.preventDefault();
-    this.getVariantId(e.target);
+    const variantID = this.getVariantId(e.target);
     let cartArray = JSON.parse(window.localStorage.getItem("Cart"));
-    cartArray.push({
-      title: this.state.title,
-      price: this.state.price,
-      img: this.state.img, // response.images[0].src for default image tile for bag
-      variantId: this.getVariantId(e.target),
-      variantName: this.getVariantTitle(e.target),
-      quantity: 1
-    })
-
+    let index = cartArray.findIndex(element => element.variantId === variantID)
+    if (index > -1) {
+      cartArray[index].quantity += 1;
+    } else {
+      cartArray.push({
+        title: this.state.title,
+        price: this.state.price,
+        img: this.state.img, // response.images[0].src for default image tile for bag
+        variantId: variantID,
+        variantName: this.getVariantTitle(e.target),
+        quantity: 1
+      })
+    }
     window.localStorage.setItem("Cart", JSON.stringify(cartArray));
   }
 
