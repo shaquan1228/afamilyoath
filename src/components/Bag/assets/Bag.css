@@ -17,7 +17,7 @@
 }
 
 .bag-up{
-animation: moveUp 1s ease infinite;
+  animation: moveUp 1s ease infinite;
 }
 
 @keyframes moveUp{

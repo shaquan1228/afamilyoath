@@ -41,7 +41,7 @@ class Sidebar extends React.Component {
         this.setState({ subNavDivs: categories })
       })
     }
-
+    if(window.innerWidth<500 && this.state.open){ console.log("here");this.handleClose()}
   }
 
 
