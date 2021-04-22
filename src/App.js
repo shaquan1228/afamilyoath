@@ -135,7 +135,7 @@ class App extends React.Component {
           <Route path="/" component={Navigation} />
 
           <div id="business-logic">
-            <Route path="/:a([A-Za-z]+)" component={Sidebar} />
+            <Route path="[/]:a([A-Za-z])" component={Sidebar} />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/oath" component={Oath} />
