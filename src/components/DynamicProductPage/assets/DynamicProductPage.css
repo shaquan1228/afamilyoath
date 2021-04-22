@@ -3,7 +3,7 @@
   height:100%;
   display: grid;
   grid-template-rows:fit-content(100%) fit-content(100%) fit-content(100%);
-  grid-gap:2%;
+  grid-row-gap:2%;
 
   align-items: center;
   justify-items: center;
@@ -20,7 +20,7 @@
 }
 
 .product-ui {
-  width: 100%;
+  /* width: 100%; */
   /* height:100%; */
   grid-row: 2 ;
  

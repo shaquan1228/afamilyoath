@@ -38,7 +38,6 @@ class App extends React.Component {
 
   addToCart(e,item) {
     e.preventDefault();
-    console.log(item)
     const variantID = this.getVariantId(e.target);
     let cart = this.state.cart;
     let index = cart.findIndex(element => element.variantId === variantID)
@@ -75,7 +74,7 @@ class App extends React.Component {
     let variantTitle = null;
     [...e].map(size => {
       if (size.checked) {
-        variantTitle = size.name;
+        variantTitle = size.id;
         return;
       }
       return;

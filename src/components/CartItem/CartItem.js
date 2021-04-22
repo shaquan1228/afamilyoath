@@ -14,7 +14,6 @@ class CartItem extends React.Component {
 
 
   render() {
-    console.log(this.props)
     return (
       this.props.quantity > 0
         ? (
