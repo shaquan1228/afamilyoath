@@ -11,7 +11,7 @@ class Policies extends React.Component {
           imgUrl: null,
           text: [
             "All preorder releases include shipping estimates in the product details. Products may  ship sooner or later than what is in the details. In this case, you will be notified via email  of any changes to the shipping of the purchased item(s).",
-            "Credit cards are charged at the time of the purchase of preorder and are subject to our  fraud checks. OATH is not liable for delays, cancellations or changes to preordered  item(s)."
+            "Credit cards are charged at the time of the purchase of preorder and are subject to our fraud checks. OATH is not liable for delays, cancellations or changes to preordered  item(s)."
           ]
         },
         {
@@ -32,7 +32,14 @@ class Policies extends React.Component {
           title: "Can I return my item?",
           imgUrl: null,
           text: [
-            "ALL SALES ARE FINAL. The only way to return an item is by emailing:  AFAMILYOATH@GMAIL.COM and informing us that we have made an error. This  means the product you received is either the WRONG SIZE or WRONG PRODUCT.  Please allow 2-3 business days for us to respond to your email. HEY, I GOT THE WRONG ITEM/ SIZE.",
+            "ALL SALES ARE FINAL.",
+            "Please contact AFAMILYOATH@GMAIL.COM directly so that we can work through this  with you. Please allow 2-3 business days for us to respond to your email."
+          ]
+        },
+        {
+          title: "I purchased the wrong item/size.",
+          imgUrl: null,
+          text: [
             "Please contact AFAMILYOATH@GMAIL.COM directly so that we can work through this  with you. Please allow 2-3 business days for us to respond to your email."
           ]
         },
@@ -61,7 +68,7 @@ class Policies extends React.Component {
           title: "I still have a question. How can I contact you directly?",
           imgUrl: null,
           text: [
-            "Our email is AFAMILYOATH@GMAIL.COM. Please allow 2-3 business days for us  to respond to your email. "
+            "Yes, our email is AFAMILYOATH@GMAIL.COM. Please allow 2-3 business days for us  to respond to your email. "
           ]
         }
       ]

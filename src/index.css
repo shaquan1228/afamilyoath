@@ -14,29 +14,44 @@ body{
 
 .business-logic-right{
   overflow-y:scroll;
+  overflow-x: hidden;
   animation: openPage 1s ease;
   display: grid;
+
 }
 
 #business-logic{
   display:grid;
   /* grid-template-columns: 25% 75%; */
   grid-template-columns: fit-content(100%) auto fit-content(30%);
-  height:80vh;
+  height:88vh;
+  height: calc(var(--vh, 1vh) * 87);
   grid-column-gap: 1%;
 }
 
 
 
+@media only screen and (max-width:750px){
+
+  #business-logic{
+    grid-template-columns: auto fit-content(100%) fit-content(40%);
+  }
+}
 
 .catalog{
   display:flex;
   flex-flow:row wrap;
   justify-content: center;
   gap: 1vh 1vw;
+  height:100%;
 }
 
 
+.catalog-logic{
+  grid-row-gap: 4%;
+  display:grid;
+  /* overflow-y: unset !important; */
+}
 
 ::-webkit-scrollbar {
   -webkit-appearance: visible;

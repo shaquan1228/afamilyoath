@@ -27,7 +27,7 @@ class Sidebar extends React.Component {
       this.setState({ subNavDivs: [...document.getElementsByClassName("sub-nav-finder")] })
     }
 
-    if(window.innerWidth<500 && this.state.open){ this.handleClose()}
+    if(window.innerWidth<750 && this.state.open){ this.handleClose()}
   }
 
   componentDidUpdate(previousProps) {
@@ -41,7 +41,8 @@ class Sidebar extends React.Component {
         this.setState({ subNavDivs: categories })
       })
     }
-    if(window.innerWidth<500 && this.state.open){ console.log("here");this.handleClose()}
+
+    if(window.innerWidth<750 && this.state.open){ this.handleClose()}
   }
 
 
@@ -78,9 +79,18 @@ class Sidebar extends React.Component {
           }
         </div>
 
-        {this.state.open
+{/*
+        {this.state.open &&  window.innerWidth<750
           ? <i className="fa fa-arrow-left left" onClick={this.handleClose} />
           : <i className="fa fa-arrow-right right" onClick={this.handleOpen} />
+        }
+*/}
+        {this.state.open && window.innerWidth>750 && 
+            <i className="fa fa-arrow-left left" onClick={this.handleClose} />
+        }
+
+        {!this.state.open && window.innerWidth>750 && 
+            <i className="fa fa-arrow-right right" onClick={this.handleOpen} />
         }
       </div>
     )

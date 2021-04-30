@@ -12,7 +12,7 @@ class CartItem extends React.Component {
   }
 
 
-
+//TODO: update price to be quantity * unit price
   render() {
     return (
       this.props.quantity > 0

@@ -9,6 +9,7 @@ import ProductSquare from '../components/ProductSquare/ProductSquare.js';
 class Catalog extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props.location)
     this.state = {
       products: null
     }
@@ -22,6 +23,7 @@ class Catalog extends React.Component {
   render() {
     return(
       <div className="business-logic-right">
+        <div className="catalog-logic">
 
           { this.state.products
                   ? this.state.products.map(function(collection){
@@ -39,7 +41,7 @@ class Catalog extends React.Component {
 
                   : null
             }
-
+        </div>
       </div>
     )
   }

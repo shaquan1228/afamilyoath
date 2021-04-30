@@ -17,8 +17,17 @@
   background-size: 0 0;
 }
 
+@media only screen and (max-width:750px){
+
+
+  .circle{
+    width:50vw;
+    height:50vw;
+  }
+}
+
 .circle:hover {
-  border-color: red;
+  /* border-color: red; */
   animation-duration: 1s;
 }
 
@@ -32,12 +41,13 @@
 .circle:hover, circle {
   background-size: 100% 100%;
   /* animation-duration:1s; */
-  filter: opacity(.5) blur(2px);
+  /* filter: opacity(.5) blur(2px); */
 }
 
 #circle-1 {
   animation: moveCircle1 3s linear infinite;
 }
+
 
 @keyframes moveCircle1 {
   from {

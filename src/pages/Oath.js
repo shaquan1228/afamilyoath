@@ -8,26 +8,38 @@ class Oath extends React.Component {
     this.state = {
       info: [
         {
-          title: "Philosophy",
-          imgUrl: "",
+          title: "PHILOSOPHY",
+          imgUrl: "./assets/afo1.png",
           text: [
-            "A Family OATH is an American luxury brand that embraces the outsiders. We are a  community-based brand that thrives off the idea of being counted out and beating the  odds.",
-            "We understand that that everyone may not see the vision right away, but their time will  come.",
-            "Our sole mission is to use our platform to allow shunned communities of people feel  welcomed.",
-            "In order to bring these stories to life, OATH uses both wearable and visual art.",
-            "With a commitment to detail and quality, OATH creates products that are regarded as  groundbreaking, timeless and unique. \"We are about originality and authenticity and at  our core we want to challenge identity, exclusion, and perspective.\""
+            "A FAMILY OATH IS AN AMERICAN LUXURY BRAND THAT MAKES A PLEDGE TO OUR FAMILY. IT GOES AS FOLLOWS:",
+            "",
+            "\"I VOW TO MY FAMILY",
+            "WHO HATH",
+            "GUIDED ME IN TIMES OF TURMOIL,",
+            "NURTURED MY DEVELOPMENT,",
+            "AND INSTILLED IDEALS OF EQUITY",
+            "TO STAY GROUNDED ON MY JOURNEY",
+            "TO NEVER FORGET MY BEGINNINGS",
+            "TO MAKE THE CHANGE I WANT TO SEE IN THE WORLD",
+            "TO BE STRONG IN THE FACE OF DARKNESS",
+            "AND INSPIRE MY PEERS TO",
+            "TAKEOVER.\"",
+            "",
+            "WE HOPE THAT OUR OATH SHOWS YOU THAT WE ARE NO DIFFERENT FROM ONE ANOTHER. WE ARE ALL PEOPLE WHO WANT TO MAKE OUR FAMILY PROUD.",
+            "A FAMILY OATH EXHIBITS THE OATH THROUGH OUR COMMITMENT TO PROVIDE QUALITY, STYLE AND AUTHENTICITY."   
           ]
         },
         {
           title: "MY BEGINNINGS, MY STORY",
-          imgUrl: "",
+          imgUrl: "./assets/chalo.png",
           text: [
-            "CHALO POPE, Founder and Creative Director",
-            "Chalo Pope is a multi-disciplinary contemporary artist from Newark, NJ. ",
-            "Chalo graduated from Lehigh University with a self-made dual major in Entrepreneurship and Design. Chalo designed this major when he realized he aspires to be a part of the tradition of great artists and political cultural movements that have emerged from Newark. That vision pushed him to move away from the  engineering track he was on and towards a life dedicated to his passion.",
-            "During his experience at Lehigh, Chalo built sets and designed costumes for the  productions run at Lehigh University like Shakespeare’s A Midsummer’s Night’s Dream  and Noel Coward’s Blithe Spirit. While developing his eye for design and learning the  aspects of a business, the concept of A Family OATH was developed.",
-            "Chalo envisions this American luxury brand to be home to the culturally aware who  resonate with feeling like the black sheep or outsider of the community. Oftentimes,  Chalo used OATH as his place of refuge and hopes it can be the same for others that  share his sentiment. ",
-            "Through OATH, Chalo hopes to create an inclusive world that values and supports the  under-appreciated and under-represented who follow the path of their own heart."
+            "CHALO POPE, FOUNDER & CREATIVE DIRECTOR",
+            "I am a multi-disciplinary contemporary artist from Newark, NJ.",
+            "I graduated from Lehigh University with a self-made dual major in Entrepreneurship and Design. I designed this major after realizing I wanted to work on more creative group projects.",
+            "During my experience at Lehigh, I worked doing set and costume design for different theatre productions such as Shakespeare’s A Midsummer’s Night’s Dream and Noel Coward’s Blithe Spirit. This practice with building sets and designing costumes pushed me to create A FAMILY OATH.",
+            "My intention with OATH is to make an American luxury brand that is home to those who feel like the black sheep or outsider of society. Throughout my life, I felt like an outsider, and OATH gave me a place of refuge.",
+            "I hope OATH creates an inclusive world that values and supports us all who feel under-appreciated and under-represented."
+          
           ]
         }
       ]

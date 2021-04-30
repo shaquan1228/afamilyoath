@@ -2,13 +2,12 @@ import React from 'react';
 import Button from '../Button/Button.js';
 
 import { getProduct } from '../../apis/shopify.js';
-
 import './assets/DynamicProductPage.css';
-
 class DynamicProductPage extends React.Component{
   constructor(props){
     super(props);
     this.state = {itemAddedToBag: false};
+    this.addToCart = this.addToCart.bind(this)
   }
 
   componentDidMount() {
@@ -36,18 +35,24 @@ class DynamicProductPage extends React.Component{
         variants: response.variants
       })
     })
-  } else if(this.state.itemAddedToBag===true && prevState.itemAddedToBag===false){
-    //console.log(this.state.itemAddedToBag)
-console.log(prevState)
-    this.setState({itemAdddedToBag:false})
-    // this.setState({itemAdddedToBag:!this.state.itemAdddedToBag})
-    setTimeout(() => {
-
-    }, 280);
   }
-
  }
 
+addToCart(e){
+  e.preventDefault();
+  this.props.addToCart(e,this.state); 
+  
+  let animation_html = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+  <circle class="path circle" fill="none" stroke="white" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+  <polyline class="path check" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+  </svg>
+  `;
+  console.log( document.getElementById("submit-button"))
+  console.log("Item Added To Bag" + animation_html)
+  document.getElementById("submit-button").dangerouslySetInnerHTML = "Item Added To Bag " + animation_html;
+  console.log( document.getElementById("submit-button"))
+  // this.setState({itemAddedToBag: true});
+}
 
   render(){
     return (
@@ -60,7 +65,7 @@ console.log(prevState)
                   <h3>{this.state.title}</h3>
                   <h4>{this.state.price}</h4>          
                 </div>
-                <form className="inventory-buttons" onSubmit={(e)=>{this.props.addToCart(e,this.state); this.setState({itemAddedToBag: true})}}>
+                <form className="inventory-buttons" onSubmit={this.addToCart}>
                   <div className="size-selection">
                     {this.state.variants.map(variant => {
                       if (!variant.available) {
@@ -90,7 +95,7 @@ console.log(prevState)
                         innerHTML="Item Added to Bag" 
                         url="" 
                         type="submit" 
-                        styleType="dark" />  )
+                        styleType="dark" />)
                   }
                   </div>
                 </form>

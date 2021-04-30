@@ -9,18 +9,27 @@
 }
 #sub-nav-grid{
   display:grid;
-  grid-template-rows:auto;
-  margin: auto;
+  grid-auto-rows:auto;
+  align-self:center;
+  /* grid-template-rows:auto; */
+  /* margin: auto 0;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  /* grid-row-gap:2%; */
+  /* overflow-y:scroll; */
+  /* overflow-x: hidden; */
+  max-height:100%;
   /* width:23vw; */
+  max-width:100%;
 }
 
 
 .sub-nav-button{
   text-align: center;
-  white-space: pre-wrap;
-  margin:5%;
+  /* white-space: pre-wrap; */
+  /* margin:2vh 0; */
+  padding-top: 3%;
+  padding-bottom: 3%;
 
 }
 

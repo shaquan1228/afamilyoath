@@ -11,6 +11,7 @@ class ProductSquare extends React.Component {
 
   }
 
+  //TODO: Make entire container link to product
   render() {
     return (
       <div className="product_container">
@@ -18,8 +19,8 @@ class ProductSquare extends React.Component {
           <img className="image-div" src={this.props.img} alt="shirt" />
         </div>
         <div className="description">
-          <h2><Button innerHTML={this.props.title} url={'shop/' + this.props.id} type="main" styleType="light" /></h2>
-          <h3> ${this.props.price} </h3>
+          <div className="product-title"><Button innerHTML={this.props.title} url={'shop/' + this.props.id} type="main" styleType="light" /></div>
+          <div className="product-price"> ${this.props.price} </div>
         </div>
       </div>
     )
