@@ -56,7 +56,9 @@ class Button extends React.Component {
       )
     } else if (this.props.type === "submit") {
       return (
-        <input className='button' style={myStyle} type="submit" value={this.props.innerHTML} />
+        <button className='button' id="submit-button" style={myStyle} type="submit" >
+          {this.props.innerHTML} 
+        </button>
       )
     } else {
       return (

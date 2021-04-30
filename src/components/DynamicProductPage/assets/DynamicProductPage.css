@@ -103,3 +103,18 @@
     grid-row:2;
   }
 }
+
+
+@keyframes submitfeedback {
+  0%{
+    
+    opacity:0;
+  }
+  50%{
+    background:tint(green,30%);
+  }
+  100%{
+    opacity:1;
+  }
+
+}

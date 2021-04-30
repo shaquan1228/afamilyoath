@@ -41,17 +41,18 @@ class DynamicProductPage extends React.Component{
 addToCart(e){
   e.preventDefault();
   this.props.addToCart(e,this.state); 
-  
-  let animation_html = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+  this.setState({itemAddedToBag: true}); 
+  /*
+
+  let addToCartButton = document.getElementById("submit-button");
+  let animation_html = `Item Added To Bag <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
   <circle class="path circle" fill="none" stroke="white" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
   <polyline class="path check" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
   </svg>
   `;
-  console.log( document.getElementById("submit-button"))
-  console.log("Item Added To Bag" + animation_html)
-  document.getElementById("submit-button").dangerouslySetInnerHTML = "Item Added To Bag " + animation_html;
-  console.log( document.getElementById("submit-button"))
-  // this.setState({itemAddedToBag: true});
+  addToCartButton.innerHTML = animation_html;
+  setTimeout(() => {   this.setState({itemAddedToBag: true});  }, 3500);
+*/
 }
 
   render(){
