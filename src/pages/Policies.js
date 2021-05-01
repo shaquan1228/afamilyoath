@@ -1,9 +1,12 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import InfoSquare from '../components/InfoSquare/InfoSquare.js';
 
 class Policies extends React.Component {
   constructor(props) {
     super(props);
+    ReactGA.pageview(props.location.pathname);
+    
     this.state = {
       info: [
         {

@@ -1,6 +1,4 @@
 import React from 'react';
-import Button from './../Button/Button.js';
-import CartItem from './../CartItem/CartItem.js';
 import './assets/Bag2.css';
 
 class Bag2 extends React.Component{

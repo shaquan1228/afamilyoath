@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from './../Button/Button.js';
 import CartItem from './../CartItem/CartItem.js';
 import './assets/Bag1.css';
 

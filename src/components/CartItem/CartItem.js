@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Button from './../Button/Button.js';
 import './assets/CartItem.css';
 
@@ -20,7 +19,7 @@ class CartItem extends React.Component {
             <div className="cart-item">
               
                 <div id="cart-stock-img-placeholder">
-                  <img className="cart-stock-img" src={this.props.imgUrl} />
+                  <img className="cart-stock-img" alt="" src={this.props.imgUrl} />
                 </div>
                 <div className="cart-text">
                   <div className="cart-stock-text">

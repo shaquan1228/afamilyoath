@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Button from './../Button/Button.js';
-import Bag from './../Bag/Bag.js';
 import './assets/Navigation.css';
 
 class Navigation extends React.Component {
@@ -58,7 +57,7 @@ class Navigation extends React.Component {
           <Button innerHTML="Policies" url="policies" type="main" styleType="light" />
         </div>
         <div onClick={this.openBag} className="main-nav-small" >
-          <img id="main-nav-bag" src='/assets/cart.png' />
+          <img id="main-nav-bag" alt="" src='/assets/cart.png' />
         </div>
       </div>
     )

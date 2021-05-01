@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import './assets/home.css';
 
 
@@ -6,6 +7,8 @@ import './assets/home.css';
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    ReactGA.pageview(props.location.pathname);
+
     this.state = {
       imgList: [
         "assets/afo1.png",

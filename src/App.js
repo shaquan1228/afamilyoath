@@ -1,11 +1,11 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 
 import Navigation from './components/Navigation/Navigation.js';
 import Sidebar from './components/Navigation/Sidebar.js';
 import DynamicProductPage from './components/DynamicProductPage/DynamicProductPage.js';
 import Bag from './components/Bag/Bag.js';
-import Test from './pages/Test.js';
 
 import Home from './pages/Home.js';
 import Oath from './pages/Oath.js';
@@ -18,10 +18,11 @@ class App extends React.Component {
     super(props);
     this.state = {}
 
+    ReactGA.initialize('UA-196060597-1');
+    
+
     this.getQuantity = this.getQuantity.bind(this);
     this.addToCart = this.addToCart.bind(this);
-    this.getVariantId = this.getVariantId.bind(this);
-    this.getVariantTitle = this.getVariantTitle.bind(this);
     this.decreaseQty = this.decreaseQty.bind(this);
     this.increaseQty = this.increaseQty.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
@@ -38,50 +39,34 @@ class App extends React.Component {
 
   addToCart(e,item) {
     e.preventDefault();
-    const variantID = this.getVariantId(e.target);
+    let variantID;
+    let variantTitle;
+    let inputIndex = [...e.target].findIndex(input => input.checked===true);
+    if(inputIndex > -1){
+        let jsonValueofIndex = JSON.parse(e.target[inputIndex].value);
+        variantID = jsonValueofIndex.id;
+        variantTitle = jsonValueofIndex.title;
+    }
     let cart = this.state.cart;
+    console.log(variantID)
     let index = cart.findIndex(element => element.variantId === variantID)
     if (index > -1) {
       cart[index].quantity += 1;
-    } else {
+    } else if(inputIndex>-1) {
+      console.log(variantTitle);
       cart.push({
         id: item.id,
         title: item.title,
         price: item.price,
-        img: item.img, // response.images[0].src for default image tile for bag
+        img: item.img, 
         variantId: variantID,
-        variantName: this.getVariantTitle(e.target),
+        variantName: variantTitle,
         quantity: 1
       })
     }
     window.localStorage.setItem("Cart", JSON.stringify(cart));
     this.setState({ cart: cart, quantity: this.getQuantity(cart) })
   }
-
-  getVariantId(e) {
-    let variantId = null;
-    [...e].map(size => {
-      if (size.checked) {
-        variantId = size.value;
-        return;
-      }
-      return;
-    })
-    return variantId;
-  }
-
-  getVariantTitle(e) {
-    let variantTitle = null;
-    [...e].map(size => {
-      if (size.checked) {
-        variantTitle = size.id;
-        return;
-      }
-      return;
-    })
-    return variantTitle;
-  }
-
 
   componentDidMount() {
     let vh = window.innerHeight * 0.01;

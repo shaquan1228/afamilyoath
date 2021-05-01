@@ -1,7 +1,6 @@
 import React from 'react';
-import {
-  getProducts
-} from './../apis/shopify.js';
+import ReactGA from 'react-ga';
+import {getProducts} from './../apis/shopify.js';
 import ProductSquare from '../components/ProductSquare/ProductSquare.js';
 
 
@@ -9,7 +8,8 @@ import ProductSquare from '../components/ProductSquare/ProductSquare.js';
 class Catalog extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.location)
+    ReactGA.pageview(props.location.pathname);
+    
     this.state = {
       products: null
     }

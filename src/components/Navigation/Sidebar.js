@@ -20,7 +20,7 @@ class Sidebar extends React.Component {
     if (this.props.match.url === "/shop") {
       getCollections().then(response => {
         let categories = []
-        response.reverse().map(function (item) { categories.push({ id: item.title }) })
+        response.reverse().forEach(function (item) { categories.push({ id: item.title }) })
         this.setState({ subNavDivs: categories })
       })
     } else {
@@ -32,12 +32,12 @@ class Sidebar extends React.Component {
 
   componentDidUpdate(previousProps) {
     let ids = document.getElementsByClassName("sub-nav-finder")
-    if (previousProps.match.url !== this.props.match.url && this.props.match.url != "/shop") {
+    if (previousProps.match.url !== this.props.match.url && this.props.match.url !== "/shop") {
       this.setState({ subNavDivs: [...ids] });
     } else if (previousProps.match.url !== this.props.match.url && this.props.match.url === "/shop") {
       getCollections().then(response => {
         let categories = []
-        response.reverse().map(function (item) { categories.push({ id: item.title }) })
+        response.reverse().forEach(function (item) { categories.push({ id: item.title }) })
         this.setState({ subNavDivs: categories })
       })
     }

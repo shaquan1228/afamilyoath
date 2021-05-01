@@ -1,17 +1,21 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import Button from '../Button/Button.js';
-
 import { getProduct } from '../../apis/shopify.js';
 import './assets/DynamicProductPage.css';
+
+
 class DynamicProductPage extends React.Component{
   constructor(props){
     super(props);
+  
     this.state = {itemAddedToBag: false};
     this.addToCart = this.addToCart.bind(this)
   }
 
   componentDidMount() {
     getProduct(this.props.match.params.id).then(response => {
+      ReactGA.pageview('/shop/'+response.title);
       this.setState({
         id: response.id,
         title: response.title,
@@ -60,7 +64,7 @@ addToCart(e){
       this.state.title 
       ?  ( 
             <div className="dynamic-container">
-              <img className="product-image" src={this.state.img} />
+              <img className="product-image" alt="" src={this.state.img} />
               <div className="product-ui">
                 <div className="product-info">
                   <h3>{this.state.title}</h3>
@@ -70,13 +74,13 @@ addToCart(e){
                   <div className="size-selection">
                     {this.state.variants.map(variant => {
                       if (!variant.available) {
-                        return;
+                        return null;
                       }
                       
                       return (
                         <label>
                           {variant.title}
-                          <input name="size-radio" type="radio" value={variant.id} id={variant.title}
+                          <input name="size-radio" type="radio" value={JSON.stringify({id:variant.id, title:variant.title})} id={variant.title}
                          /> 
                         </label>
                       )
