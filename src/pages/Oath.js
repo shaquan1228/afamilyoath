@@ -60,13 +60,13 @@ class Oath extends React.Component {
                   title={item.title}
                   img={item.imgUrl}
                   innerHTML={item.text}
-                  style="img_left"
+                  style={{style:"img_left"}}
                 />)
                 : (<InfoSquare
                   title={item.title}
                   img={item.imgUrl}
                   innerHTML={item.text}
-                  style="img_right"
+                  style={{style:"img_right"}}
                 />)
             )
           })
