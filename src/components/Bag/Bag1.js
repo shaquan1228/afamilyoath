@@ -9,8 +9,6 @@ class Bag1 extends React.Component {
 
   }
 
-  
-  
   render() {
     return (
       <div id="bag-sub-nav">
@@ -39,7 +37,11 @@ class Bag1 extends React.Component {
               })
             }
           </div>
-          <div id="bag-shipping" className="bag-stock-text">Shipping: $7.00</div>
+          <div id="bag-shipping" className="bag-stock-text">
+            Shipping: Calculated on Shopify
+            <p>Total: {this.props.totalPrice}</p>
+          </div>
+
 
 
       </div>

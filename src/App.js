@@ -31,12 +31,21 @@ class App extends React.Component {
   }
 
   getQuantity(cart) {
-    if (!cart.length) {
+    if (!this.state.cart) {
       return 0;
     }
     return cart.reduce((acc,item) => {
       return acc + item.quantity
     }, 0)
+  }
+
+  getTotalPrice() {
+    if (!this.state.cart) {
+      return 0;
+    }
+    return this.state.cart.reduce((acc,item) => {
+      return acc + parseInt(item.price) * item.quantity;
+    }, 0).toFixed(2);
   }
 
   addToCart(e,item) {
@@ -119,6 +128,7 @@ class App extends React.Component {
   }
 
   render() {
+    const totalPrice = this.getTotalPrice();
     return (
       <BrowserRouter>
         <div>
@@ -140,7 +150,8 @@ class App extends React.Component {
             <Route path="/">
               <Bag cart={this.state.cart} quantity={this.state.quantity} 
                 increaseQty={this.increaseQty} 
-                decreaseQty={this.decreaseQty} 
+                decreaseQty={this.decreaseQty}
+                totalPrice={totalPrice} 
                 removeFromCart = {this.removeFromCart} />
             </Route>
           </div>

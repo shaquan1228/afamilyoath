@@ -100,7 +100,8 @@ class Bag extends React.Component {
                 quantity={this.props.quantity} 
                 cart={this.props.cart}  
                 increaseQty={this.props.increaseQty}  
-                decreaseQty={this.props.decreaseQty}  
+                decreaseQty={this.props.decreaseQty}
+                totalPrice={this.props.totalPrice}  
                 removeFromCart={this.props.removeFromCart}/>)
         }
         <div onClick={this.state.readyToPurchase ? this.queryPurchase : this.queryUserInfo} className="bag-stock-button">
