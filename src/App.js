@@ -26,6 +26,8 @@ class App extends React.Component {
     this.decreaseQty = this.decreaseQty.bind(this);
     this.increaseQty = this.increaseQty.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
+
+    console.log("This was made by Shaquan Nelson and Carlos Ramirez. The greatest coders that ever lived.")
   }
 
   getQuantity(cart) {
@@ -115,7 +117,7 @@ class App extends React.Component {
       this.setState({ cart: cart, quantity: this.getQuantity(cart) })
     }
   }
-  // /^[\/].+$/
+
   render() {
     return (
       <BrowserRouter>
@@ -133,6 +135,7 @@ class App extends React.Component {
                 render={(props) => (
                   <DynamicProductPage {...props} addToCart={this.addToCart} cart={this.state.cart} />
                 )}  />
+              <Redirect to="/"/>
             </Switch>
             <Route path="/">
               <Bag cart={this.state.cart} quantity={this.state.quantity} 

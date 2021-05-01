@@ -18,6 +18,9 @@ body{
   animation: openPage 1s ease;
   display: grid;
 
+  height: 98%;
+  align-self: end;
+
 }
 
 #business-logic{

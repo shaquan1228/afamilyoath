@@ -14,7 +14,7 @@ class InfoSquare extends React.Component {
       <div id={this.props.title} className="sub-nav-finder">
         {
           this.props.img &&
-          this.props.style === 'img_right' &&
+          this.props.myStyle === 'img_right' &&
           <div className='wrapper_img_right'>
 
             <div className='image_right'>
@@ -24,7 +24,7 @@ class InfoSquare extends React.Component {
               <h1 style={{textAlign:'left'}}>{this.props.title}</h1>
               {
                 this.props.innerHTML.map((row,index )=> {
-                  if(index>1 && index <13){return <p className="poem"> {row}</p>}
+                  if(index>1 && index <13){return <p key={row+index} className="poem"> {row}</p>}
                   return <p>{row}</p>
                 })
               }
@@ -34,7 +34,7 @@ class InfoSquare extends React.Component {
         }
         {
           this.props.img &&
-          this.props.style === 'img_left' &&
+          this.props.myStyle === 'img_left' &&
           <div className='wrapper_img_left'>
             <div className='image_left'>
               <img className="infosquare-image" src={this.props.img} alt="This is my infoImg" />
@@ -42,8 +42,8 @@ class InfoSquare extends React.Component {
             <div className='text_right'>
               <h1>{this.props.title}</h1>
               {
-                this.props.innerHTML.map(row => {
-                  return <p>{row}</p>
+                this.props.innerHTML.map( (row,index) => {
+                  return <p key={row+index}>{row}</p>
                 })
               }
             </div>
@@ -55,8 +55,8 @@ class InfoSquare extends React.Component {
             <div className='text_right'>
               <h1>{this.props.title}</h1>
               {
-                this.props.innerHTML.map(row => {
-                  return <p>{row}</p>
+                this.props.innerHTML.map((row,index) => {
+                  return <p key={row+index}>{row}</p>
                 })
               }
             </div>

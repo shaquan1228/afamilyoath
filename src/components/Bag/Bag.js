@@ -1,6 +1,8 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import Bag1 from './Bag1.js';
 import Bag2 from './Bag2.js';
+import {makePaymentSession} from './../../apis/shopify.js'
 import Button from './../Button/Button.js';
 import './assets/Bag.css';
 
@@ -51,9 +53,8 @@ class Bag extends React.Component {
         zip: zip
       };
 
-      /*
+
            makePaymentSession(contactInfo, shippingAddress).then((checkout)=>{
-             //Feedback before changing pages!!
              let confirm = window.confirm("Now entering Shopify")
              if(confirm){
                ReactGA.event({
@@ -63,7 +64,6 @@ class Bag extends React.Component {
                window.location.replace(checkout); }
              else{ }
            })
-      */
 
     }
     else if (!regexp.test(zip)) {

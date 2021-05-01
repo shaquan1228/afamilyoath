@@ -3,7 +3,7 @@
   height:fit-content;
   grid-column: 1 / span 2;
   display: grid;
-  border:1px solid orange;
+
   /* grid-template-rows:60% fit-content(100%) fit-content(100%); */
   grid-row-gap:2%;
   height:100%;
@@ -27,7 +27,6 @@
   /* width: 100%;
   height:100%;  */
   grid-row: 2 ;
-  border:1px solid blue;
  
 }
 
@@ -60,7 +59,7 @@
   overflow-y:scroll;
   /* height:100%; */
   text-align: center;
-  border:1px solid green;
+ 
 }
 
 
@@ -75,7 +74,7 @@
     height:100%;
     max-height:30vh;
     width: 100%;
-    border:1px solid red;
+   
   }
 
 }
@@ -109,9 +108,6 @@
   0%{
     
     opacity:0;
-  }
-  50%{
-    background:tint(green,30%);
   }
   100%{
     opacity:1;

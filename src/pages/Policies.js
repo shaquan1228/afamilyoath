@@ -86,16 +86,18 @@ class Policies extends React.Component {
             return (
               (i % 2 === 1)
                 ? (<InfoSquare
+                  key={item.title+i}
                   title={item.title}
                   img={item.imgUrl}
                   innerHTML={item.text}
-                  style={{style:"img_left"}}
+                  myStyle="img_left"
                 />)
                 : (<InfoSquare
+                  key={item.title+i}
                   title={item.title}
                   img={item.imgUrl}
                   innerHTML={item.text}
-                  style={{style:"img_right"}}
+                  myStyle="img_right"
                 />)
             )
           })
