@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+# Getting Started with afamilyoath
+
+View live website: https://afamilyoath.com/
+
+#### Home Page
+![image](https://user-images.githubusercontent.com/73605526/120075438-42d39f00-c06f-11eb-9ccc-1eec9a8fcc6b.png)
+
+#### Oath Page
+![image](https://user-images.githubusercontent.com/73605526/120075451-4cf59d80-c06f-11eb-8ef6-9afb2e9055c7.png)
+
+#### Catalog Page
+![image](https://user-images.githubusercontent.com/73605526/120075467-5aab2300-c06f-11eb-8795-83267b2c21ca.png)
+![image](https://user-images.githubusercontent.com/73605526/120075472-5e3eaa00-c06f-11eb-8ea0-b1e5c136009c.png)
+
+#### Dynamic Product Page
+![image](https://user-images.githubusercontent.com/73605526/120075477-65fe4e80-c06f-11eb-9622-40ab624e01ad.png)
+
+#### Policies Page
+![image](https://user-images.githubusercontent.com/73605526/120075486-731b3d80-c06f-11eb-82b7-d7d54bb1cfc4.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
