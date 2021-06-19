@@ -28,6 +28,29 @@ align-items: center;
   background-image:url('logo.png')
 }
 
+@keyframes switchLogos{
+  0%{
+      opacity: 100%;
+  }
+
+  50%{
+      opacity: 0%;
+      /* background-image:url('logo2.png'); */
+  }
+  
+  100%{
+      opacity: 100%;
+      /* background-image:url('logo2.png'); */
+  }
+}
+
+
+#main-nav-logo:hover{
+  animation: switchLogos .2s ease-out;
+  background-image:url('logo2.png');
+  
+}
+
 #main-nav-logo-img{
   height:8vh;
   grid-column:2;

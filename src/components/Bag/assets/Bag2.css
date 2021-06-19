@@ -17,9 +17,7 @@ height:90%;
   height:80%;
 
 }
-.payment-col{
 
-}
 .full{
     grid-column: 1 / span 2;
 }
@@ -29,20 +27,18 @@ input[type=text]{
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 
-
-
 }
 
-input[type=text]:focus {
+@media only screen and (max-width:750px){
 
+  input[type=text]:focus {
 
+    font-size:16px;
+  }
 }
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-internal-autofill-selected{
 
-}
+
+
 
 @keyframes keystroke{
   from, to {opacity:70%; }
