@@ -4,6 +4,7 @@ View live website: https://afamilyoath.com/
 
 #### Home Page
 ![image](https://user-images.githubusercontent.com/73605526/120075438-42d39f00-c06f-11eb-9ccc-1eec9a8fcc6b.png)
+![image](https://user-images.githubusercontent.com/24377620/123350646-67fde500-d529-11eb-886b-d3a6cc8d49cc.png)
 
 #### Oath Page
 ![image](https://user-images.githubusercontent.com/73605526/120075451-4cf59d80-c06f-11eb-8ef6-9afb2e9055c7.png)
