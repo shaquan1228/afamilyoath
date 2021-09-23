@@ -3,20 +3,43 @@
 View live website: https://afamilyoath.com/
 
 #### Home Page
+## Wireframe
+![image](https://user-images.githubusercontent.com/24377620/123350646-67fde500-d529-11eb-886b-d3a6cc8d49cc.png)
+## Final Product
 ![image](https://user-images.githubusercontent.com/73605526/120075438-42d39f00-c06f-11eb-9ccc-1eec9a8fcc6b.png)
 
+
 #### Oath Page
+## Wireframe
+![image](https://user-images.githubusercontent.com/24377620/123350769-ac898080-d529-11eb-8bdf-61677c9c8123.png)
+## Final Product
 ![image](https://user-images.githubusercontent.com/73605526/120075451-4cf59d80-c06f-11eb-8ef6-9afb2e9055c7.png)
 
 #### Catalog Page
+## Wireframe
+![image](https://user-images.githubusercontent.com/24377620/123350817-c1feaa80-d529-11eb-99d3-3d66971c2c10.png)
+## Final Product
 ![image](https://user-images.githubusercontent.com/73605526/120075467-5aab2300-c06f-11eb-8795-83267b2c21ca.png)
 ![image](https://user-images.githubusercontent.com/73605526/120075472-5e3eaa00-c06f-11eb-8ea0-b1e5c136009c.png)
 
 #### Dynamic Product Page
+## Wireframe
+![image](https://user-images.githubusercontent.com/24377620/123350896-efe3ef00-d529-11eb-9b3c-f37387a0435f.png)
+## Final Product
 ![image](https://user-images.githubusercontent.com/73605526/120075477-65fe4e80-c06f-11eb-9622-40ab624e01ad.png)
 
 #### Policies Page
+## Wireframe
+![image](https://user-images.githubusercontent.com/24377620/123350940-0db15400-d52a-11eb-8577-726525611219.png)
+## Final Product
 ![image](https://user-images.githubusercontent.com/73605526/120075486-731b3d80-c06f-11eb-82b7-d7d54bb1cfc4.png)
+
+### Reused Components
+## Wireframe 
+# Navigation
+![image](https://user-images.githubusercontent.com/24377620/123351009-3b969880-d52a-11eb-92b7-fd1e14a88aa8.png)
+# Bag
+![image](https://user-images.githubusercontent.com/24377620/123350979-2a4d8c00-d52a-11eb-9e46-8376b113d59d.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

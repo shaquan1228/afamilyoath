@@ -20,7 +20,7 @@ class MailSignup extends React.Component{
 
   }
   submitSignup(e){
-    let key = "bea80908ace8433e258e543f101f4ca0-us1"
+    let key = ""
 
     let url = "https://us1.api.mailchimp.com/2.0/lists/subscribe.json?apikey="+key+"&id=9b99b501b4&email[email]="+
     this.state.email+"&merge_vars[FNAME]="+this.state.fname+"&merge_vars[LNAME]="+this.state.lname+"&double_optin=true&send_welcome=false"
