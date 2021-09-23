@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './../Button/Button.js';
+import './assets/MailSignup.css';
 
 
 
@@ -21,7 +22,7 @@ class MailSignup extends React.Component{
   submitSignup(e){
     let key = "bea80908ace8433e258e543f101f4ca0-us1"
 
-    let url = "http://us1.api.mailchimp.com/2.0/lists/subscribe.json?apikey="+key+"&id=9b99b501b4&email[email]="+
+    let url = "https://us1.api.mailchimp.com/2.0/lists/subscribe.json?apikey="+key+"&id=9b99b501b4&email[email]="+
     this.state.email+"&merge_vars[FNAME]="+this.state.fname+"&merge_vars[LNAME]="+this.state.lname+"&double_optin=true&send_welcome=false"
     if(!this.state.email){
       this.setState({status:"Please provide an email address before subscribing."});
@@ -44,7 +45,7 @@ class MailSignup extends React.Component{
     else if(this.state.fname && this.state.lname && this.state.email) {
         return fetch(url, {
                 method: 'POST',
-                // mode: 'no-cors',
+                mode: 'no-cors',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                     'Content-Type': 'application/json'
